@@ -53,6 +53,19 @@ final class StoreDetailViewController: UIViewController {
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
+    private let segmentTab: UISegmentedControl = {
+        let segment = UISegmentedControl()
+        segment.selectedSegmentTintColor = .clear
+        segment.backgroundColor = .white
+        segment.insertSegment(withTitle: "정보", at: 0, animated: true)
+        segment.insertSegment(withTitle: "스토리", at: 1, animated: true)
+        let selectedMenuAttribute = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        let unselecteMenuAttribute = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        segment.setTitleTextAttributes(selectedMenuAttribute, for: .selected)
+        segment.setTitleTextAttributes(unselecteMenuAttribute, for: .normal)
+        segment.selectedSegmentIndex = 0
+        return segment
+    }()
 
     // MARK: - viewLifeCycle
 
@@ -71,6 +84,7 @@ final class StoreDetailViewController: UIViewController {
         
         scrollView.addSubview(storeImageView)
         scrollView.addSubview(storeInfoView)
+        scrollView.addSubview(segmentTab)
         
         storeInfoView.addSubview(storeName)
         storeInfoView.addSubview(storeDescription)
@@ -85,12 +99,12 @@ final class StoreDetailViewController: UIViewController {
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
         }
-        floatingView.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(view)
-            make.height.equalTo(100)
+        floatingView.snp.makeConstraints {
+            $0.left.right.bottom.equalTo(view)
+            $0.height.equalTo(100)
         }
-        floatingButton.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalToSuperview().inset(20)
+        floatingButton.snp.makeConstraints {
+            $0.top.bottom.leading.trailing.equalToSuperview().inset(20)
         }
         storeImageView.snp.makeConstraints {
             $0.leading.equalToSuperview()
@@ -110,6 +124,11 @@ final class StoreDetailViewController: UIViewController {
         storeDescription.snp.makeConstraints {
             $0.top.equalTo(storeName.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview().inset(10)
+        }
+        segmentTab.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(storeInfoView.snp.bottom).offset(10)
+            $0.height.equalTo(50)
         }
     }
 }
