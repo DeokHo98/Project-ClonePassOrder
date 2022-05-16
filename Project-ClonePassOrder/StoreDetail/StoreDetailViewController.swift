@@ -64,7 +64,11 @@ final class StoreDetailViewController: UIViewController {
         segment.selectedSegmentIndex = 0
         return segment
     }()
-
+    private let selectedView: UIView = {
+        let view = StoreDetailInfoView()
+        return view
+    }()
+    
     // MARK: - viewLifeCycle
     
     override func viewDidLoad() {
@@ -85,6 +89,7 @@ final class StoreDetailViewController: UIViewController {
         scrollView.addSubview(storeImageView)
         scrollView.addSubview(storeInfoView)
         scrollView.addSubview(segmentTab)
+        scrollView.addSubview(selectedView)
         
         storeInfoView.addSubview(storeName)
         storeInfoView.addSubview(storeDescription)
@@ -130,6 +135,11 @@ final class StoreDetailViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.top.equalTo(storeInfoView.snp.bottom).offset(10)
             $0.height.equalTo(50)
+        }
+        selectedView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(segmentTab.snp.bottom).offset(10)
+            $0.bottom.equalTo(scrollView.snp.bottom)
         }
     }
 }
