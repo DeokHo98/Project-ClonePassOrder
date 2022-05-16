@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89D1E8A42832133500758407 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1E8A32832133500758407 /* StoreDetailViewController.swift */; };
+		89D1E8A6283276E900758407 /* StoreDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1E8A5283276E900758407 /* StoreDetailInfoView.swift */; };
 		BC337D0F9B984365219479F9 /* Pods_Project_ClonePassOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B9257EC17CF641E141003A /* Pods_Project_ClonePassOrder.framework */; };
 		FE210D54282BC2CC009A4EB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE210D53282BC2CC009A4EB8 /* AppDelegate.swift */; };
 		FE210D56282BC2CC009A4EB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE210D55282BC2CC009A4EB8 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		0813B9FF5744293B7DCCEBF5 /* Pods-Project-ClonePassOrder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ClonePassOrder.release.xcconfig"; path = "Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder.release.xcconfig"; sourceTree = "<group>"; };
 		2FA1E3AEA1F7ACE9E2448EED /* Pods-Project-ClonePassOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ClonePassOrder.debug.xcconfig"; path = "Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		89D1E8A32832133500758407 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		89D1E8A5283276E900758407 /* StoreDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailInfoView.swift; sourceTree = "<group>"; };
 		C6B9257EC17CF641E141003A /* Pods_Project_ClonePassOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_ClonePassOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE210D50282BC2CC009A4EB8 /* Project-ClonePassOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-ClonePassOrder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE210D53282BC2CC009A4EB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				89D1E8A32832133500758407 /* StoreDetailViewController.swift */,
+				89D1E8A5283276E900758407 /* StoreDetailInfoView.swift */,
 			);
 			path = StoreDetail;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				FED158CD282DFB2900605A25 /* UIkitExtenstion.swift in Sources */,
 				FE210D54282BC2CC009A4EB8 /* AppDelegate.swift in Sources */,
 				FE210D56282BC2CC009A4EB8 /* SceneDelegate.swift in Sources */,
+				89D1E8A6283276E900758407 /* StoreDetailInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
