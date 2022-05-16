@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = StoreDetailViewController()
         window?.makeKeyAndVisible()
     }
 
