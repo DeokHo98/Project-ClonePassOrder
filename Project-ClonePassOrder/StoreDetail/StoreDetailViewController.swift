@@ -45,9 +45,9 @@ final class StoreDetailViewController: UIViewController {
     private let storeDescription: UILabel = {
         let label = UILabel()
         label.text = """
-                        백종원이 하는 백다방!
-                        커피가 맛있어요👍🏻
-                        """
+                    백종원이 하는 백다방!
+                    커피가 맛있어요👍🏻
+                    """
         label.textColor = .lightGray
         label.numberOfLines = 0
         label.font = .preferredFont(forTextStyle: .body)
@@ -68,12 +68,14 @@ final class StoreDetailViewController: UIViewController {
     }()
 
     // MARK: - viewLifeCycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeUI()
     }
-
+    
+    // MARK: - makeUI
+    
     private func makeUI() {
         view.backgroundColor = .tertiarySystemGroupedBackground
         
@@ -91,6 +93,8 @@ final class StoreDetailViewController: UIViewController {
         
         setAutolayout()
     }
+    
+    // MARK: - setAutolayout
     
     private func setAutolayout() {
         scrollView.snp.makeConstraints {
