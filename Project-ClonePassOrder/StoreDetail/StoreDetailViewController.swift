@@ -55,8 +55,6 @@ final class StoreDetailViewController: UIViewController {
     }()
     private let segmentTab: UISegmentedControl = {
         let segment = UISegmentedControl()
-        segment.selectedSegmentTintColor = .clear
-        segment.backgroundColor = .white
         segment.insertSegment(withTitle: "정보", at: 0, animated: true)
         segment.insertSegment(withTitle: "스토리", at: 1, animated: true)
         let selectedMenuAttribute = [NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -120,7 +118,6 @@ final class StoreDetailViewController: UIViewController {
         storeInfoView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.top.equalTo(storeImageView.snp.bottom).offset(20)
-            $0.bottom.equalTo(scrollView.snp.bottom).inset(10)
         }
         storeName.snp.makeConstraints {
             $0.leading.trailing.top.equalToSuperview().inset(10)
