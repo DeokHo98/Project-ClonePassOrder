@@ -75,7 +75,7 @@ final class StoreDetailViewController: UIViewController {
     // MARK: - makeUI
     
     private func makeUI() {
-        view.backgroundColor = .tertiarySystemGroupedBackground
+        view.backgroundColor = .systemBackground
         
         view.addSubview(scrollView)
         view.addSubview(floatingView)
