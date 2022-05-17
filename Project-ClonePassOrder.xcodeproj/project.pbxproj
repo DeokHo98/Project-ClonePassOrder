@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0091C9C7316A3F2A7ACD44A8 /* Pods_Project_ClonePassOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5966503D142681CB1BA87AC6 /* Pods_Project_ClonePassOrder.framework */; };
 		FE210D54282BC2CC009A4EB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE210D53282BC2CC009A4EB8 /* AppDelegate.swift */; };
 		FE210D56282BC2CC009A4EB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE210D55282BC2CC009A4EB8 /* SceneDelegate.swift */; };
 		FE210D5D282BC2CD009A4EB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE210D5C282BC2CD009A4EB8 /* Assets.xcassets */; };
@@ -18,9 +19,13 @@
 		FED158C7282DF95F00605A25 /* qrCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED158C6282DF95F00605A25 /* qrCameraController.swift */; };
 		FED158CA282DF97400605A25 /* MyPasserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED158C9282DF97400605A25 /* MyPasserController.swift */; };
 		FED158CD282DFB2900605A25 /* UIkitExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED158CC282DFB2900605A25 /* UIkitExtenstion.swift */; };
+		FEDFF52E2833B98500E65E45 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDFF52D2833B98500E65E45 /* ListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		208668EB3B923A519098874D /* Pods-Project-ClonePassOrder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ClonePassOrder.release.xcconfig"; path = "Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder.release.xcconfig"; sourceTree = "<group>"; };
+		5966503D142681CB1BA87AC6 /* Pods_Project_ClonePassOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_ClonePassOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		618A96F99BC00DB03CB45AB0 /* Pods-Project-ClonePassOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ClonePassOrder.debug.xcconfig"; path = "Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		FE210D50282BC2CC009A4EB8 /* Project-ClonePassOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-ClonePassOrder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE210D53282BC2CC009A4EB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE210D55282BC2CC009A4EB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +39,7 @@
 		FED158C6282DF95F00605A25 /* qrCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qrCameraController.swift; sourceTree = "<group>"; };
 		FED158C9282DF97400605A25 /* MyPasserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPasserController.swift; sourceTree = "<group>"; };
 		FED158CC282DFB2900605A25 /* UIkitExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIkitExtenstion.swift; sourceTree = "<group>"; };
+		FEDFF52D2833B98500E65E45 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0091C9C7316A3F2A7ACD44A8 /* Pods_Project_ClonePassOrder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AB533A9A79C351519A496F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5966503D142681CB1BA87AC6 /* Pods_Project_ClonePassOrder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BA5920882ED60BDF1D12CA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				618A96F99BC00DB03CB45AB0 /* Pods-Project-ClonePassOrder.debug.xcconfig */,
+				208668EB3B923A519098874D /* Pods-Project-ClonePassOrder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FE210D47282BC2CC009A4EB8 = {
 			isa = PBXGroup;
 			children = (
 				FE210D52282BC2CC009A4EB8 /* Project-ClonePassOrder */,
 				FE210D51282BC2CC009A4EB8 /* Products */,
+				8BA5920882ED60BDF1D12CA3 /* Pods */,
+				7AB533A9A79C351519A496F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FED158BC282DF86700605A25 /* HomeController.swift */,
+				FEDFF52D2833B98500E65E45 /* ListController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -145,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE210D64282BC2CD009A4EB8 /* Build configuration list for PBXNativeTarget "Project-ClonePassOrder" */;
 			buildPhases = (
+				16C480E508631D6364F245A7 /* [CP] Check Pods Manifest.lock */,
 				FE210D4C282BC2CC009A4EB8 /* Sources */,
 				FE210D4D282BC2CC009A4EB8 /* Frameworks */,
 				FE210D4E282BC2CC009A4EB8 /* Resources */,
+				B99C9FE1A04439BACFA8CD50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +232,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16C480E508631D6364F245A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project-ClonePassOrder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B99C9FE1A04439BACFA8CD50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FE210D4C282BC2CC009A4EB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -213,6 +284,7 @@
 				FED158C7282DF95F00605A25 /* qrCameraController.swift in Sources */,
 				FED158CA282DF97400605A25 /* MyPasserController.swift in Sources */,
 				FED158C3282DF92100605A25 /* FavoriteController.swift in Sources */,
+				FEDFF52E2833B98500E65E45 /* ListController.swift in Sources */,
 				FED158BA282DF68100605A25 /* TabBarController.swift in Sources */,
 				FED158CD282DFB2900605A25 /* UIkitExtenstion.swift in Sources */,
 				FE210D54282BC2CC009A4EB8 /* AppDelegate.swift in Sources */,
@@ -285,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -340,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -352,6 +424,7 @@
 		};
 		FE210D65282BC2CD009A4EB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618A96F99BC00DB03CB45AB0 /* Pods-Project-ClonePassOrder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -380,6 +453,7 @@
 		};
 		FE210D66282BC2CD009A4EB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 208668EB3B923A519098874D /* Pods-Project-ClonePassOrder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
