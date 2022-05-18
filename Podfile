@@ -7,6 +7,6 @@ target 'Project-ClonePassOrder' do
 
   # Pods for Project-ClonePassOrder
 
-pod 'SnapKit', '~> 5.0.0'
+    pod 'SnapKit', '~> 5.0.0'
 
 end

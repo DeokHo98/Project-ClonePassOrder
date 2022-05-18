@@ -1,5 +1,5 @@
 //
-//  OrderHistoryViewController.swift
+//  FavoriteViewController.swift
 //  Project-ClonePassOrder
 //
 //  Created by 정덕호 on 2022/05/13.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class OrderHistoryController: UIViewController {
+class FavoriteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .yellow
         // Do any additional setup after loading the view.
     }
     
