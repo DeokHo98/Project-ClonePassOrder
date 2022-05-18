@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrderHistoryController: UIViewController {
+class OrderHistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

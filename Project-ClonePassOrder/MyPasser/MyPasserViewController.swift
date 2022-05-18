@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPasserController: UIViewController {
+class MyPasserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

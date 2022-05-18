@@ -1,5 +1,5 @@
 //
-//  FavoriteViewController.swift
+//  qrCameraViewController.swift
 //  Project-ClonePassOrder
 //
 //  Created by 정덕호 on 2022/05/13.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class FavoriteController: UIViewController {
+class qrCameraViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.backgroundColor = .blue
+
         // Do any additional setup after loading the view.
     }
     
