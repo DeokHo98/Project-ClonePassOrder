@@ -9,6 +9,14 @@ import UIKit
 import SnapKit
 
 final class StoreDetailViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    let infoView = StoreDetailInfoView()
+    let storyView = StoreDetailStoryView()
+    
+    // MARK: - UI Properties
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         return scrollView
@@ -53,7 +61,7 @@ final class StoreDetailViewController: UIViewController {
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
-    private let segmentTab: UISegmentedControl = {
+    private lazy var segmentTab: UISegmentedControl = {
         let segment = UISegmentedControl()
         segment.insertSegment(withTitle: "정보", at: 0, animated: true)
         segment.insertSegment(withTitle: "스토리", at: 1, animated: true)
@@ -62,10 +70,11 @@ final class StoreDetailViewController: UIViewController {
         segment.setTitleTextAttributes(selectedMenuAttribute, for: .selected)
         segment.setTitleTextAttributes(unselecteMenuAttribute, for: .normal)
         segment.selectedSegmentIndex = 0
+        segment.addTarget(self, action: #selector(switchSeletedView(_:)), for: .valueChanged)
         return segment
     }()
-    private let selectedView: UIView = {
-        let view = StoreDetailInfoView()
+    private lazy var selectedView: UIView = {
+        let view = infoView
         return view
     }()
     
@@ -141,5 +150,19 @@ final class StoreDetailViewController: UIViewController {
             $0.top.equalTo(segmentTab.snp.bottom).offset(10)
             $0.bottom.equalTo(scrollView.snp.bottom)
         }
+    }
+    
+    @objc func switchSeletedView(_ sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        if selectedIndex == 0 {
+            selectedView.removeFromSuperview()
+            selectedView = infoView
+            
+        } else if selectedIndex == 1 {
+            selectedView.removeFromSuperview()
+            selectedView = storyView
+        }
+        scrollView.addSubview(selectedView)
+        setAutolayout()
     }
 }
