@@ -83,7 +83,9 @@ class LoginViewController: UIViewController {
     //MARK: - 메서드
     
     private func setLayout() {
-        view.addSubview(logoImageView)
+        [logoImageView,loginStackView].forEach {
+            view.addSubview($0)
+        }
         kakaoTalkLoginButton.snp.makeConstraints { make in
             make.height.equalTo(60)
         }
@@ -92,7 +94,6 @@ class LoginViewController: UIViewController {
             make.top.equalTo(view.snp.top)
             make.bottom.equalTo(view.snp.bottomMargin)
         }
-        view.addSubview(loginStackView)
         loginStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)

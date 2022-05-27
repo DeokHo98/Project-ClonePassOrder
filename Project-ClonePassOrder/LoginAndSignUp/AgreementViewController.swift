@@ -207,23 +207,22 @@ class AgreementViewController: UIViewController {
     
     private func setLayout() {
         self.welcomViewSetLayout(view: view, welcomeView: welcomeView)
-        view.addSubview(nextButton)
+        [nextButton,allAgreementStackView,separateView,agreementStackView].forEach {
+            view.addSubview($0)
+        }
         nextButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalTo(view.snp.bottomMargin).offset(-20)
         }
-        view.addSubview(allAgreementStackView)
         allAgreementStackView.snp.makeConstraints { make in
             make.top.equalTo(welcomeView.snp.bottom).offset(100)
             make.leading.trailing.equalToSuperview().inset(20)
         }
-        view.addSubview(separateView)
         separateView.snp.makeConstraints { make in
             make.top.equalTo(allAgreementStackView.snp.bottom).offset(15)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(0.8)
         }
-        view.addSubview(agreementStackView)
         agreementStackView.snp.makeConstraints { make in
             make.top.equalTo(separateView.snp.bottom).offset(15)
             make.bottom.equalTo(nextButton.snp.top).offset(-40)

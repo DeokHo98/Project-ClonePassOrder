@@ -70,13 +70,14 @@ class SignUpViewController: UIViewController {
             guard let phoneNumberConfirmButton = phoneNumberConfirmButton else {
                 return
             }
-            view.addSubview(phoneNumberConfirmButton)
+            [phoneNumberConfirmButton,textField].forEach {
+                view.addSubview($0)
+            }
             phoneNumberConfirmButton.snp.makeConstraints { make in
                 make.top.equalTo(welcomeView.snp.bottom).offset(100)
                 make.trailing.equalToSuperview().offset(-20)
                 make.width.equalTo(80)
             }
-            view.addSubview(textField)
             textField.snp.makeConstraints { make in
                 make.top.equalTo(welcomeView.snp.bottom).offset(100)
                 make.leading.equalToSuperview().offset(20)
