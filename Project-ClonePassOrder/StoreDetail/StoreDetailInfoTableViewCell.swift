@@ -1,14 +1,17 @@
 //
-//  StoreDetailInfoView.swift
+//  StoreDetailInfoCell.swift
 //  Project-ClonePassOrder
 //
-//  Created by Eunsoo KIM on 2022/05/16.
+//  Created by Eunsoo KIM on 2022/05/26.
 //
 
 import UIKit
 import SnapKit
 
-class StoreDetailInfoView: UIView {
+class StoreDetailInfoTableViewCell: UITableViewCell {
+
+    // MARK: - UI Properties
+
     private let couponeLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .systemGray6
@@ -116,7 +119,15 @@ class StoreDetailInfoView: UIView {
         return stackView
     }()
     private lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [storeBenefitsStackView, businessHoursStackView, holidayStackView, telNumberStackView, addressStackView])
+        let stackView = UIStackView(
+            arrangedSubviews: [
+                storeBenefitsStackView,
+                businessHoursStackView,
+                holidayStackView,
+                telNumberStackView,
+                addressStackView
+            ]
+        )
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.alignment = .fill
@@ -130,35 +141,30 @@ class StoreDetailInfoView: UIView {
     }()
     private let storeMapView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .green
         return view
     }()
-    
-    // MARK: - initializer
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        makeUI()
+
+    // MARK: - Initializer
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setLayout()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - makeUI
-    
-    private func makeUI() {
+
+    // MARK: - setLayout
+
+    private func setLayout() {
         addSubview(couponeLabel)
         addSubview(infoStackView)
         addSubview(seperatorView)
         addSubview(storeMapView)
-        setAutolayout()
-    }
-    
-    // MARK: - setAutolayout
-    
-    private func setAutolayout() {
+
         couponeLabel.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview().inset(10)
+            make.leading.trailing.top.equalToSuperview().inset(20)
             make.height.equalTo(40)
         }
         storeBenefitsLabel.snp.makeConstraints { make in
@@ -178,18 +184,18 @@ class StoreDetailInfoView: UIView {
         }
         infoStackView.snp.makeConstraints { make in
             make.top.equalTo(couponeLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.leading.trailing.equalToSuperview().inset(20)
         }
         seperatorView.snp.makeConstraints { make in
             make.top.equalTo(infoStackView.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(1)
         }
         storeMapView.snp.makeConstraints { make in
             make.top.equalTo(seperatorView).offset(10)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(300)
-            make.bottom.equalToSuperview().inset(70)
+            make.bottom.equalToSuperview()
         }
     }
 }

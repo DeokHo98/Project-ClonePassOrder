@@ -24,7 +24,7 @@ class TabBarController: UITabBarController {
         let orderHistoryCV = OrderHistoryViewController()
         let favoriteCV = FavoriteViewController()
         let qrCameraCV = qrCameraViewController()
-        let myPasserCV = MyPasserViewController()
+        let myPasserCV = MyPasserTableViewController(style: .grouped)
         let homeNavi = templatNavigation(
             title: "홈",
             image: UIImage(systemName: "cup.and.saucer.fill")!,

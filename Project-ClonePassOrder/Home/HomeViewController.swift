@@ -68,10 +68,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        naviSetAttribute()
         setAtrribute()
         setLayout()
         stateButtonTapped()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        naviSetAttribute()
     }
     
     //MARK: - 셀렉터메서드
@@ -84,20 +86,24 @@ class HomeViewController: UIViewController {
         homeState = .mapView
         stateButtonTapped()
     }
+    @objc private func searchButtonTapped() {
+        let vc = SearchCollectionViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     //MARK: - 메서드
     private func setLayout() {
-        view.addSubview(searchButton)
+        [searchButton,buttonStack,stateButtonSeparateView].forEach {
+            view.addSubview($0)
+        }
         searchButton.snp.makeConstraints { make in
             make.top.equalTo(view.snp.topMargin).offset(10)
             make.leading.equalToSuperview().offset(20)
         }
-        view.addSubview(buttonStack)
         buttonStack.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(searchButton.snp.bottom).offset(20)
         }
-        view.addSubview(stateButtonSeparateView)
         stateButtonSeparateView.snp.makeConstraints { make in
             make.height.equalTo(3)
             make.top.equalTo(listButton.snp.bottom)
@@ -107,9 +113,12 @@ class HomeViewController: UIViewController {
     }
     private func setAtrribute() {
         view.backgroundColor = .systemBackground
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        listView.delegate = self
     }
     private func naviSetAttribute() {
         navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false
     }
     private func stateButtonTapped() {
         switch homeState {
@@ -124,7 +133,6 @@ class HomeViewController: UIViewController {
                 make.trailing.equalTo(listButton.snp.trailing)
             }
             mapView.removeFromSuperview()
-            addChild(listView)
             view.addSubview(listView.view)
             listView.view.snp.makeConstraints { make in
                 make.trailing.leading.equalToSuperview()
@@ -141,7 +149,6 @@ class HomeViewController: UIViewController {
                 make.leading.equalTo(mapButton.snp.leading)
                 make.trailing.equalTo(mapButton.snp.trailing)
             }
-            willMove(toParent: listView)
             listView.view.removeFromSuperview()
             view.addSubview(mapView)
             mapView.snp.makeConstraints { make in
@@ -150,5 +157,14 @@ class HomeViewController: UIViewController {
                 make.bottom.equalTo(view.snp.bottomMargin)
             }
         }
+    }
+}
+
+//MARK: - 리스트컬렉션뷰 델리게이트
+extension HomeViewController: ListCollectionViewDelegate {
+    func footerTapped(title: String) {
+        let vc = MoreCollectionViewController()
+        vc.naviTitle = title
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

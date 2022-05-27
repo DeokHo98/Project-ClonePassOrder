@@ -35,28 +35,26 @@ class EmailLoginViewController: UIViewController {
     
     //MARK: - 메서드
     private func setLayout() {
+        [emailTextField,emailLabel,passwordTextField,passwordLabel,emailLoginButton].forEach {
+            view.addSubview($0)
+        }
         self.welcomViewSetLayout(view: view, welcomeView: welcomeView)
-        view.addSubview(emailTextField)
         emailTextField.snp.makeConstraints { make in
             make.top.equalTo(welcomeView.snp.bottom).offset(100)
             make.leading.trailing.equalToSuperview().inset(20)
         }
-        view.addSubview(emailLabel)
         emailLabel.snp.makeConstraints { make in
             make.centerY.equalTo(emailTextField).offset(-20)
             make.leading.equalTo(emailTextField)
         }
-        view.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(20)
         }
-        view.addSubview(passwordLabel)
         passwordLabel.snp.makeConstraints { make in
             make.centerY.equalTo(passwordTextField).offset(-20)
             make.leading.equalTo(passwordTextField)
         }
-        view.addSubview(emailLoginButton)
         emailLoginButton.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(20)

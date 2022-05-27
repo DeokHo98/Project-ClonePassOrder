@@ -1,19 +1,22 @@
 //
-//  StoryCollectionViewCell.swift
+//  StoryTableViewCell.swift
 //  Project-ClonePassOrder
 //
-//  Created by Eunsoo KIM on 2022/05/17.
+//  Created by Eunsoo KIM on 2022/05/26.
 //
 
 import UIKit
 import SnapKit
 
-class StoryCollectionViewCell: UICollectionViewCell {
+class StoryTableViewCell: UITableViewCell {
+
+    // MARK: - UI Properties
+
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = imageView.frame.width / 2
-        imageView.backgroundColor = .gray
+        imageView.layer.cornerRadius = 40
+        imageView.backgroundColor = .systemPink
         return imageView
     }()
     let profileNameLabel: UILabel = {
@@ -24,7 +27,7 @@ class StoryCollectionViewCell: UICollectionViewCell {
     }()
     let createdDateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray5
+        label.textColor = .systemGray2
         label.text = "4일 전"
         return label
     }()
@@ -32,14 +35,13 @@ class StoryCollectionViewCell: UICollectionViewCell {
         let stackView = UIStackView()
         [profileNameLabel, createdDateLabel].forEach { stackView.addArrangedSubview($0) }
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 1
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
         return stackView
     }()
     lazy var profileStackView: UIStackView = {
-        let stackView = UIStackView()
-        [profileImageView, nameDateStackView].forEach{ stackView.addArrangedSubview($0) }
+        let stackView = UIStackView(arrangedSubviews: [profileImageView, nameDateStackView])
         stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.alignment = .fill
@@ -55,14 +57,13 @@ class StoryCollectionViewCell: UICollectionViewCell {
         let stackView = UIStackView()
         [profileStackView, moreButton].forEach{ stackView.addArrangedSubview($0) }
         stackView.axis = .horizontal
-        stackView.spacing = 5
         stackView.alignment = .fill
-        stackView.distribution = .fill
+        stackView.distribution = .equalSpacing
         return stackView
     }()
     let storyLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray5
+        label.textColor = .gray
         label.numberOfLines = 0
         label.text = """
                      너무 맛있구여
@@ -81,19 +82,23 @@ class StoryCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.backgroundColor = .clear
         button.setTitle("좋아요 0개", for: .normal)
+        button.setTitleColor(.orange, for: .normal)
+        button.titleLabel?.textAlignment = .center
         return button
     }()
     let commentsButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
         button.setTitle("댓글 0개", for: .normal)
+        button.setTitleColor(.systemGray, for: .normal)
+        button.titleLabel?.textAlignment = .center
         return button
     }()
     lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView()
         [likeButton, commentsButton].forEach{ stackView.addArrangedSubview($0) }
         stackView.axis = .horizontal
-        
+        stackView.distribution = .fillEqually
         return stackView
     }()
     let seperator: UIView = {
@@ -102,33 +107,18 @@ class StoryCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
-    
     // MARK: - Initializer
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setLayout()
     }
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - setAtrribute
-    func setAtrribute(
-        profileImage: UIImage?,
-        profileName: String,
-        createdDate: String,
-        story: String,
-        storyImage: UIImage?
-    ) {
-        profileImageView.image = profileImage
-        profileNameLabel.text = profileName
-        createdDateLabel.text = createdDate
-        storyLabel.text = story
-        storyImageView.image = storyImage
-    }
-    
+
     // MARK: - setLayout
-    
+
     func setLayout() {
         contentView.addSubview(userStackView)
         contentView.addSubview(storyLabel)
@@ -136,35 +126,30 @@ class StoryCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(buttonStackView)
         contentView.addSubview(seperator)
         
-        
+        profileImageView.snp.makeConstraints { make in
+            make.height.width.equalTo(80)
+        }
         userStackView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(10)
+            make.top.leading.trailing.equalToSuperview().inset(20)
         }
         storyLabel.snp.makeConstraints { make in
-            make.top.equalTo(userStackView.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.top.equalTo(userStackView.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
         }
         storyImageView.snp.makeConstraints { make in
-            make.top.equalTo(storyLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(10)
-            make.height.equalTo(300)
+            make.top.equalTo(storyLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(200)
         }
         buttonStackView.snp.makeConstraints { make in
             make.top.equalTo(storyImageView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(80)
         }
         seperator.snp.makeConstraints { make in
             make.top.equalTo(buttonStackView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(10)
-            make.height.equalTo(1)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview()
         }
-    }
-    
-    @objc func moreButtonTapped() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "신고", style: .default))
-        alert.addAction(UIAlertAction(title: "취소", style: .cancel))
-        
     }
 }
