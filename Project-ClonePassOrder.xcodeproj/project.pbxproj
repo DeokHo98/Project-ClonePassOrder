@@ -22,33 +22,6 @@
 		3D2ED9C0283600E8000B0501 /* OrderMenuDetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2ED9BF283600E8000B0501 /* OrderMenuDetailTableView.swift */; };
 		3D2ED9C328361613000B0501 /* OrderMenuDetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2ED9C228361613000B0501 /* OrderMenuDetailInfoCell.swift */; };
 		3D2ED9C528361BEB000B0501 /* QuantitySelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2ED9C428361BEB000B0501 /* QuantitySelectCell.swift */; };
-		3D2ED9C8283A8345000B0501 /* QuantitySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2ED9C7283A8345000B0501 /* QuantitySelectView.swift */; };
-		3DB17814283CAF09007E7BDF /* MoneyCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17813283CAF09007E7BDF /* MoneyCircleButton.swift */; };
-		3DB17818283E2CDA007E7BDF /* OrderPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17817283E2CDA007E7BDF /* OrderPayViewController.swift */; };
-		3DB1781B283E2F21007E7BDF /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1781A283E2F21007E7BDF /* LocationView.swift */; };
-		3DB1781E283F5FBC007E7BDF /* LeftImgRightLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1781D283F5FBC007E7BDF /* LeftImgRightLabelView.swift */; };
-		3DB17820283F6C73007E7BDF /* PayItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1781F283F6C73007E7BDF /* PayItemInfoView.swift */; };
-		3DB17822283FDCEC007E7BDF /* PayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17821283FDCEC007E7BDF /* PayInfoView.swift */; };
-		3DB17824283FE0F7007E7BDF /* TimeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17823283FE0F7007E7BDF /* TimeBtn.swift */; };
-		3DB17826283FE223007E7BDF /* GetTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17825283FE223007E7BDF /* GetTimeView.swift */; };
-		3DB17828283FEAB4007E7BDF /* RequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17827283FEAB4007E7BDF /* RequirementView.swift */; };
-		3DB1782B283FF309007E7BDF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1782A283FF309007E7BDF /* UIViewController.swift */; };
-		3DB1782D283FF8D8007E7BDF /* TotalOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1782C283FF8D8007E7BDF /* TotalOrderView.swift */; };
-		3DB1782F283FFB2F007E7BDF /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1782E283FFB2F007E7BDF /* CardCollectionView.swift */; };
-		3DB17832283FFC1F007E7BDF /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17831283FFC1F007E7BDF /* CardCollectionViewCell.swift */; };
-		3DB17834284000AE007E7BDF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17833284000AE007E7BDF /* CardView.swift */; };
-		3DB1783728401A82007E7BDF /* PayFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1783628401A82007E7BDF /* PayFinishViewController.swift */; };
-		3DB1783A28401FB1007E7BDF /* PayStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1783928401FB1007E7BDF /* PayStateView.swift */; };
-		3DB1783C28402075007E7BDF /* PayFinishInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1783B28402075007E7BDF /* PayFinishInfoView.swift */; };
-		3DB1783F284034E1007E7BDF /* LeftRightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1783E284034E1007E7BDF /* LeftRightLabel.swift */; };
-		3DB17841284048ED007E7BDF /* NextOrderRecoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB17840284048ED007E7BDF /* NextOrderRecoView.swift */; };
-		3DB1784428404E71007E7BDF /* PayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1784328404E71007E7BDF /* PayDetailViewController.swift */; };
-		3DB178472840503E007E7BDF /* PayDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB178462840503E007E7BDF /* PayDetailInfoView.swift */; };
-		3DB1784A28405118007E7BDF /* AfterPayInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1784928405118007E7BDF /* AfterPayInfoLabel.swift */; };
-		3DB1784C28405BB6007E7BDF /* PayReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1784B28405BB6007E7BDF /* PayReceiptView.swift */; };
-		3DB1784E28405BD5007E7BDF /* ThreeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1784D28405BD5007E7BDF /* ThreeLabelView.swift */; };
-		3DB1A273283B589B00221D3D /* OrangeSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1A272283B589B00221D3D /* OrangeSelectButton.swift */; };
-		3DB1A275283BED2D00221D3D /* IceSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1A274283BED2D00221D3D /* IceSelectCell.swift */; };
 		4B870C8CF724795D1547B76C /* Pods_Project_ClonePassOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007EB4BE1D657C1590A20F12 /* Pods_Project_ClonePassOrder.framework */; };
 		891C2B342834E88800972E25 /* StoreDetailStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891C2B302834E88800972E25 /* StoreDetailStoryView.swift */; };
 		891C2B352834E88800972E25 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891C2B312834E88800972E25 /* StoreDetailViewController.swift */; };
@@ -90,33 +63,6 @@
 		3D2ED9BF283600E8000B0501 /* OrderMenuDetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenuDetailTableView.swift; sourceTree = "<group>"; };
 		3D2ED9C228361613000B0501 /* OrderMenuDetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenuDetailInfoCell.swift; sourceTree = "<group>"; };
 		3D2ED9C428361BEB000B0501 /* QuantitySelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelectCell.swift; sourceTree = "<group>"; };
-		3D2ED9C7283A8345000B0501 /* QuantitySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelectView.swift; sourceTree = "<group>"; };
-		3DB17813283CAF09007E7BDF /* MoneyCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyCircleButton.swift; sourceTree = "<group>"; };
-		3DB17817283E2CDA007E7BDF /* OrderPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPayViewController.swift; sourceTree = "<group>"; };
-		3DB1781A283E2F21007E7BDF /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		3DB1781D283F5FBC007E7BDF /* LeftImgRightLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImgRightLabelView.swift; sourceTree = "<group>"; };
-		3DB1781F283F6C73007E7BDF /* PayItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayItemInfoView.swift; sourceTree = "<group>"; };
-		3DB17821283FDCEC007E7BDF /* PayInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayInfoView.swift; sourceTree = "<group>"; };
-		3DB17823283FE0F7007E7BDF /* TimeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBtn.swift; sourceTree = "<group>"; };
-		3DB17825283FE223007E7BDF /* GetTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTimeView.swift; sourceTree = "<group>"; };
-		3DB17827283FEAB4007E7BDF /* RequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementView.swift; sourceTree = "<group>"; };
-		3DB1782A283FF309007E7BDF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		3DB1782C283FF8D8007E7BDF /* TotalOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOrderView.swift; sourceTree = "<group>"; };
-		3DB1782E283FFB2F007E7BDF /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
-		3DB17831283FFC1F007E7BDF /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
-		3DB17833284000AE007E7BDF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		3DB1783628401A82007E7BDF /* PayFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayFinishViewController.swift; sourceTree = "<group>"; };
-		3DB1783928401FB1007E7BDF /* PayStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayStateView.swift; sourceTree = "<group>"; };
-		3DB1783B28402075007E7BDF /* PayFinishInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayFinishInfoView.swift; sourceTree = "<group>"; };
-		3DB1783E284034E1007E7BDF /* LeftRightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftRightLabel.swift; sourceTree = "<group>"; };
-		3DB17840284048ED007E7BDF /* NextOrderRecoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextOrderRecoView.swift; sourceTree = "<group>"; };
-		3DB1784328404E71007E7BDF /* PayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailViewController.swift; sourceTree = "<group>"; };
-		3DB178462840503E007E7BDF /* PayDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailInfoView.swift; sourceTree = "<group>"; };
-		3DB1784928405118007E7BDF /* AfterPayInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterPayInfoLabel.swift; sourceTree = "<group>"; };
-		3DB1784B28405BB6007E7BDF /* PayReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayReceiptView.swift; sourceTree = "<group>"; };
-		3DB1784D28405BD5007E7BDF /* ThreeLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeLabelView.swift; sourceTree = "<group>"; };
-		3DB1A272283B589B00221D3D /* OrangeSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeSelectButton.swift; sourceTree = "<group>"; };
-		3DB1A274283BED2D00221D3D /* IceSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceSelectCell.swift; sourceTree = "<group>"; };
 		624AC09E484F17F2CD08E630 /* Pods-Project-ClonePassOrder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ClonePassOrder.release.xcconfig"; path = "Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder.release.xcconfig"; sourceTree = "<group>"; };
 		7680081A2B264A925D9F6DE1 /* Pods-Project-ClonePassOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ClonePassOrder.debug.xcconfig"; path = "Target Support Files/Pods-Project-ClonePassOrder/Pods-Project-ClonePassOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		891C2B302834E88800972E25 /* StoreDetailStoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailStoryView.swift; sourceTree = "<group>"; };
@@ -223,10 +169,10 @@
 		3D2ED9B928355A16000B0501 /* OrderMenuDetail */ = {
 			isa = PBXGroup;
 			children = (
-				3D2ED9BA28355A2B000B0501 /* OrderMenuDetailViewController.swift */,
 				3D2ED9BE2835FF95000B0501 /* Model */,
 				3D2ED9BD2835FF82000B0501 /* View */,
 				3D2ED9BC2835FF76000B0501 /* ViewModel */,
+				3D2ED9BA28355A2B000B0501 /* OrderMenuDetailViewController.swift */,
 			);
 			path = OrderMenuDetail;
 			sourceTree = "<group>";
@@ -241,7 +187,6 @@
 		3D2ED9BD2835FF82000B0501 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3D2ED9C6283A831C000B0501 /* ReusableView */,
 				3D2ED9BF283600E8000B0501 /* OrderMenuDetailTableView.swift */,
 				3D2ED9C1283615F5000B0501 /* Cell */,
 			);
@@ -260,127 +205,8 @@
 			children = (
 				3D2ED9C228361613000B0501 /* OrderMenuDetailInfoCell.swift */,
 				3D2ED9C428361BEB000B0501 /* QuantitySelectCell.swift */,
-				3DB1A274283BED2D00221D3D /* IceSelectCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		3D2ED9C6283A831C000B0501 /* ReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				3D2ED9C7283A8345000B0501 /* QuantitySelectView.swift */,
-				3DB1A272283B589B00221D3D /* OrangeSelectButton.swift */,
-				3DB17813283CAF09007E7BDF /* MoneyCircleButton.swift */,
-			);
-			path = ReusableView;
-			sourceTree = "<group>";
-		};
-		3DB17816283E2CA9007E7BDF /* OrderPay */ = {
-			isa = PBXGroup;
-			children = (
-				3DB17817283E2CDA007E7BDF /* OrderPayViewController.swift */,
-				3DB17829283FF2F8007E7BDF /* Extension */,
-				3DB17819283E2F10007E7BDF /* View */,
-			);
-			path = OrderPay;
-			sourceTree = "<group>";
-		};
-		3DB17819283E2F10007E7BDF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3DB17830283FFC12007E7BDF /* Cell */,
-				3DB1781C283F5F9B007E7BDF /* ReusableView */,
-				3DB1781A283E2F21007E7BDF /* LocationView.swift */,
-				3DB17821283FDCEC007E7BDF /* PayInfoView.swift */,
-				3DB17825283FE223007E7BDF /* GetTimeView.swift */,
-				3DB17827283FEAB4007E7BDF /* RequirementView.swift */,
-				3DB1782C283FF8D8007E7BDF /* TotalOrderView.swift */,
-				3DB1782E283FFB2F007E7BDF /* CardCollectionView.swift */,
-				3DB17833284000AE007E7BDF /* CardView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3DB1781C283F5F9B007E7BDF /* ReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1781D283F5FBC007E7BDF /* LeftImgRightLabelView.swift */,
-				3DB1781F283F6C73007E7BDF /* PayItemInfoView.swift */,
-				3DB17823283FE0F7007E7BDF /* TimeBtn.swift */,
-			);
-			path = ReusableView;
-			sourceTree = "<group>";
-		};
-		3DB17829283FF2F8007E7BDF /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1782A283FF309007E7BDF /* UIViewController.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		3DB17830283FFC12007E7BDF /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				3DB17831283FFC1F007E7BDF /* CardCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		3DB1783528401A6E007E7BDF /* PayFinish */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1783628401A82007E7BDF /* PayFinishViewController.swift */,
-				3DB1783828401F90007E7BDF /* View */,
-			);
-			path = PayFinish;
-			sourceTree = "<group>";
-		};
-		3DB1783828401F90007E7BDF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1783D284034C0007E7BDF /* ReusableView */,
-				3DB1783928401FB1007E7BDF /* PayStateView.swift */,
-				3DB1783B28402075007E7BDF /* PayFinishInfoView.swift */,
-				3DB17840284048ED007E7BDF /* NextOrderRecoView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3DB1783D284034C0007E7BDF /* ReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1783E284034E1007E7BDF /* LeftRightLabel.swift */,
-			);
-			path = ReusableView;
-			sourceTree = "<group>";
-		};
-		3DB1784228404E5A007E7BDF /* PayDetailView */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1784328404E71007E7BDF /* PayDetailViewController.swift */,
-				3DB17848284050F6007E7BDF /* ReusableView */,
-				3DB178452840502E007E7BDF /* View */,
-			);
-			path = PayDetailView;
-			sourceTree = "<group>";
-		};
-		3DB178452840502E007E7BDF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3DB178462840503E007E7BDF /* PayDetailInfoView.swift */,
-				3DB1784B28405BB6007E7BDF /* PayReceiptView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3DB17848284050F6007E7BDF /* ReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1784928405118007E7BDF /* AfterPayInfoLabel.swift */,
-				3DB1784D28405BD5007E7BDF /* ThreeLabelView.swift */,
-			);
-			path = ReusableView;
 			sourceTree = "<group>";
 		};
 		891C2B2F2834E88800972E25 /* StoreDetail */ = {
@@ -443,9 +269,6 @@
 				FED158CB282DFAF700605A25 /* Utils */,
 				3D2ED99C2835455B000B0501 /* OrderMenu */,
 				3D2ED9B928355A16000B0501 /* OrderMenuDetail */,
-				3DB17816283E2CA9007E7BDF /* OrderPay */,
-				3DB1783528401A6E007E7BDF /* PayFinish */,
-				3DB1784228404E5A007E7BDF /* PayDetailView */,
 				FE210D53282BC2CC009A4EB8 /* AppDelegate.swift */,
 				FE210D55282BC2CC009A4EB8 /* SceneDelegate.swift */,
 				FE210D5C282BC2CD009A4EB8 /* Assets.xcassets */,
@@ -647,60 +470,33 @@
 				FED158BD282DF86700605A25 /* HomeViewController.swift in Sources */,
 				FED158C7282DF95F00605A25 /* qrCameraViewController.swift in Sources */,
 				FE5840C328334BC300287753 /* AgreementViewController.swift in Sources */,
-				3DB1781E283F5FBC007E7BDF /* LeftImgRightLabelView.swift in Sources */,
-				3DB1A273283B589B00221D3D /* OrangeSelectButton.swift in Sources */,
 				3D2ED9AD2835455B000B0501 /* CategoryModel.swift in Sources */,
-				3DB1784428404E71007E7BDF /* PayDetailViewController.swift in Sources */,
 				3D2ED9AE2835455B000B0501 /* OrderMenuSearchBar.swift in Sources */,
 				FED158CA282DF97400605A25 /* MyPasserViewController.swift in Sources */,
 				FED158C3282DF92100605A25 /* FavoriteViewController.swift in Sources */,
-				3DB1783F284034E1007E7BDF /* LeftRightLabel.swift in Sources */,
-				3DB17818283E2CDA007E7BDF /* OrderPayViewController.swift in Sources */,
-				3DB17824283FE0F7007E7BDF /* TimeBtn.swift in Sources */,
 				FED158CD282DFB2900605A25 /* Extenstion.swift in Sources */,
 				891C2B352834E88800972E25 /* StoreDetailViewController.swift in Sources */,
 				3D2ED9AB2835455B000B0501 /* MenuCollectionViewModel.swift in Sources */,
-				3DB1783C28402075007E7BDF /* PayFinishInfoView.swift in Sources */,
 				FE210D54282BC2CC009A4EB8 /* AppDelegate.swift in Sources */,
-				3DB1781B283E2F21007E7BDF /* LocationView.swift in Sources */,
 				FE0F5AC72834EB570008017C /* ListCollectionViewController.swift in Sources */,
 				3D2ED9C528361BEB000B0501 /* QuantitySelectCell.swift in Sources */,
-				3DB1784A28405118007E7BDF /* AfterPayInfoLabel.swift in Sources */,
 				3D2ED9B728354579000B0501 /* APIKeys.swift in Sources */,
 				3D2ED9BB28355A2B000B0501 /* OrderMenuDetailViewController.swift in Sources */,
 				3D2ED9AC2835455B000B0501 /* DetailMenuTableViewModel.swift in Sources */,
 				3D2ED9B828354579000B0501 /* Constant.swift in Sources */,
 				3D2ED9AA2835455B000B0501 /* OrderMenuViewController.swift in Sources */,
 				3D2ED9B02835455B000B0501 /* MenuCollectionViewCell.swift in Sources */,
-				3DB1782F283FFB2F007E7BDF /* CardCollectionView.swift in Sources */,
 				3D2ED9AF2835455B000B0501 /* DetailMenuTableViewCell.swift in Sources */,
 				3D2ED9B22835455B000B0501 /* MenuCollectionView.swift in Sources */,
-				3DB17826283FE223007E7BDF /* GetTimeView.swift in Sources */,
-				3DB1784C28405BB6007E7BDF /* PayReceiptView.swift in Sources */,
-				3DB1782B283FF309007E7BDF /* UIViewController.swift in Sources */,
-				3DB1784E28405BD5007E7BDF /* ThreeLabelView.swift in Sources */,
 				3D2ED9B12835455B000B0501 /* DetailMenuTableView.swift in Sources */,
 				891C2B372834E88800972E25 /* StoreDetailInfoView.swift in Sources */,
 				3D2ED9C328361613000B0501 /* OrderMenuDetailInfoCell.swift in Sources */,
-				3DB17822283FDCEC007E7BDF /* PayInfoView.swift in Sources */,
 				FE5840B328322EC100287753 /* EmailLoginViewController.swift in Sources */,
-				3DB1783728401A82007E7BDF /* PayFinishViewController.swift in Sources */,
-				3DB17832283FFC1F007E7BDF /* CardCollectionViewCell.swift in Sources */,
 				FE4BEF0228321F9700530B08 /* LoginAndSignUpExtension.swift in Sources */,
-				3DB17814283CAF09007E7BDF /* MoneyCircleButton.swift in Sources */,
 				FEDFF5222833852900E65E45 /* TabBarController.swift in Sources */,
 				FE210D56282BC2CC009A4EB8 /* SceneDelegate.swift in Sources */,
-				3DB1783A28401FB1007E7BDF /* PayStateView.swift in Sources */,
-				3DB17828283FEAB4007E7BDF /* RequirementView.swift in Sources */,
-				3DB1782D283FF8D8007E7BDF /* TotalOrderView.swift in Sources */,
-				3DB17841284048ED007E7BDF /* NextOrderRecoView.swift in Sources */,
 				FE4BEF002832058800530B08 /* LoginViewController.swift in Sources */,
-				3DB17820283F6C73007E7BDF /* PayItemInfoView.swift in Sources */,
-				3DB1A275283BED2D00221D3D /* IceSelectCell.swift in Sources */,
-				3DB178472840503E007E7BDF /* PayDetailInfoView.swift in Sources */,
 				891C2B362834E88800972E25 /* StoryCollectionViewCell.swift in Sources */,
-				3DB17834284000AE007E7BDF /* CardView.swift in Sources */,
-				3D2ED9C8283A8345000B0501 /* QuantitySelectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
