@@ -53,6 +53,11 @@
 		FE8AAACE2857723900CACBF5 /* MockStoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC13C75285711EB00928D48 /* MockStoryService.swift */; };
 		FE8AAACF2857724900CACBF5 /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC13C712857114300928D48 /* StoryModel.swift */; };
 		FE8AAAD02857724900CACBF5 /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC13C712857114300928D48 /* StoryModel.swift */; };
+		FE8AAAD62858516900CACBF5 /* OwnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAD52858516900CACBF5 /* OwnerTableViewController.swift */; };
+		FE8AAAD9285851AB00CACBF5 /* OwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAD7285851AB00CACBF5 /* OwnerTableViewCell.swift */; };
+		FE8AAADC2858564800CACBF5 /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAADB2858564800CACBF5 /* OwnerModel.swift */; };
+		FE8AAADE2858566700CACBF5 /* OwnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAADD2858566700CACBF5 /* OwnerViewModel.swift */; };
+		FE8AAAE02858566F00CACBF5 /* OwnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAADF2858566F00CACBF5 /* OwnerService.swift */; };
 		FE8E660A28489C9500F8708D /* ADViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED8A7182847B854002E70A6 /* ADViewModel.swift */; };
 		FE8E660B28489C9500F8708D /* ADViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED8A7182847B854002E70A6 /* ADViewModel.swift */; };
 		FE8E661328490A6A00F8708D /* CafeListUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E661228490A6A00F8708D /* CafeListUnitTest.swift */; };
@@ -263,6 +268,11 @@
 		FE7208CD28447E5A00C32AA3 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		FE7208CF284480B700C32AA3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		FE8AAAC72857720A00CACBF5 /* StoryUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryUnitTest.swift; sourceTree = "<group>"; };
+		FE8AAAD52858516900CACBF5 /* OwnerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTableViewController.swift; sourceTree = "<group>"; };
+		FE8AAAD7285851AB00CACBF5 /* OwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTableViewCell.swift; sourceTree = "<group>"; };
+		FE8AAADB2858564800CACBF5 /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
+		FE8AAADD2858566700CACBF5 /* OwnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewModel.swift; sourceTree = "<group>"; };
+		FE8AAADF2858566F00CACBF5 /* OwnerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerService.swift; sourceTree = "<group>"; };
 		FE8E661228490A6A00F8708D /* CafeListUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListUnitTest.swift; sourceTree = "<group>"; };
 		FE8E661628490A8900F8708D /* CafeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListViewModel.swift; sourceTree = "<group>"; };
 		FE8E661828490A9000F8708D /* CafeListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListService.swift; sourceTree = "<group>"; };
@@ -533,6 +543,7 @@
 		FE7208D22844826500C32AA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE8AAAD42858515100CACBF5 /* Owner */,
 				FE4BEEFE2832055100530B08 /* LoginAndSignUp */,
 				FEDFF5202833850F00E65E45 /* TabBar */,
 				FED158BB282DF84900605A25 /* Home */,
@@ -569,6 +580,18 @@
 				FE7208CF284480B700C32AA3 /* AuthViewModel.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		FE8AAAD42858515100CACBF5 /* Owner */ = {
+			isa = PBXGroup;
+			children = (
+				FE8AAAD52858516900CACBF5 /* OwnerTableViewController.swift */,
+				FE8AAAD7285851AB00CACBF5 /* OwnerTableViewCell.swift */,
+				FE8AAADB2858564800CACBF5 /* OwnerModel.swift */,
+				FE8AAADD2858566700CACBF5 /* OwnerViewModel.swift */,
+				FE8AAADF2858566F00CACBF5 /* OwnerService.swift */,
+			);
+			path = Owner;
 			sourceTree = "<group>";
 		};
 		FE8E660E28490A4500F8708D /* CafeList */ = {
@@ -1409,6 +1432,7 @@
 				FED481532840939F00A36638 /* MenuCollectionView.swift in Sources */,
 				FED481232840924F00A36638 /* dismissKeyboard.swift in Sources */,
 				FED845F628407F510090D09A /* StoreDetailViewController.swift in Sources */,
+				FE8AAADC2858564800CACBF5 /* OwnerModel.swift in Sources */,
 				FE1287EB283614B300B7CDC4 /* ListCellHeader.swift in Sources */,
 				FED845FD28407F510090D09A /* StoryTableViewCell.swift in Sources */,
 				FEC13C76285711EB00928D48 /* MockStoryService.swift in Sources */,
@@ -1447,6 +1471,7 @@
 				FE3AB5E62850465F00A745E6 /* ConfirmPassWordViewController.swift in Sources */,
 				FEBA7E5B2847178000BCD132 /* UserModel.swift in Sources */,
 				FE7208D0284480B700C32AA3 /* AuthViewModel.swift in Sources */,
+				FE8AAADE2858566700CACBF5 /* OwnerViewModel.swift in Sources */,
 				FED480FB2840923800A36638 /* OrangeSelectButton.swift in Sources */,
 				FE1287E62835FFD600B7CDC4 /* SecondListCell.swift in Sources */,
 				FED4812C2840924F00A36638 /* RequirementView.swift in Sources */,
@@ -1459,6 +1484,7 @@
 				FE3AB5E42850465500A745E6 /* PasswordSignUpViewController.swift in Sources */,
 				FEBA7E372845EE0E00BCD132 /* SignUpService.swift in Sources */,
 				FED8A7192847B854002E70A6 /* ADViewModel.swift in Sources */,
+				FE8AAAD9285851AB00CACBF5 /* OwnerTableViewCell.swift in Sources */,
 				FED480F92840923800A36638 /* OrderMenuDetailViewController.swift in Sources */,
 				FED481512840939F00A36638 /* MenuCollectionViewCell.swift in Sources */,
 				FEBA7E3B2845F1EA00BCD132 /* MockSignUpService.swift in Sources */,
@@ -1475,6 +1501,7 @@
 				FE210D56282BC2CC009A4EB8 /* SceneDelegate.swift in Sources */,
 				FED845FA28407F510090D09A /* StoreDetailTableViewHeaderView.swift in Sources */,
 				FEED608328449C5800CD8FC1 /* AuthService.swift in Sources */,
+				FE8AAAE02858566F00CACBF5 /* OwnerService.swift in Sources */,
 				FED481272840924F00A36638 /* CardCollectionView.swift in Sources */,
 				FE1287ED28361B0500B7CDC4 /* ListCellFooter.swift in Sources */,
 				FED481282840924F00A36638 /* CardView.swift in Sources */,
@@ -1487,6 +1514,7 @@
 				FE0F5ACF2835E25C0008017C /* SecondADCell.swift in Sources */,
 				FECC82582845C1EF005FCCFA /* SignUpViewModel.swift in Sources */,
 				FE4BEF002832058800530B08 /* LoginViewController.swift in Sources */,
+				FE8AAAD62858516900CACBF5 /* OwnerTableViewController.swift in Sources */,
 				FED481332840924F00A36638 /* PayDetailInfoView.swift in Sources */,
 				FED4812D2840924F00A36638 /* TotalOrderView.swift in Sources */,
 				FED481342840924F00A36638 /* PayReceiptView.swift in Sources */,
