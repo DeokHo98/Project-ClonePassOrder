@@ -35,15 +35,15 @@ class OwnerTableViewCell: UITableViewCell {
     }()
     private let paymentDateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray3
+        label.textColor = .systemGray
         label.text = "| " + "16일 15:59"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     private let orderTypeLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
-        label.textColor = .systemGray3
+        label.text = "15분 뒤에 받으러 갈게요"
+        label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

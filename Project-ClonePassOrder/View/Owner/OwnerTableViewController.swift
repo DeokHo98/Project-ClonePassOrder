@@ -14,9 +14,7 @@ class OwnerTableViewController: UITableViewController {
         OwnerViewModel().orderListFetch()
         navigationItem.hidesBackButton = true
         tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationItem.largeTitleDisplayMode = .never
-        navigationItem.title = "주문리스트"
+        navigationItem.title = "빽다방 동두천지행점 주문리스트"
         tableView.separatorStyle = .none
         tableView.register(OwnerTableViewCell.self, forCellReuseIdentifier: "ownerCell")
     }
