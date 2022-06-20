@@ -104,16 +104,7 @@ class SecondADCell: UICollectionViewCell {
                 height: self.bounds.height
             )
             imageView.contentMode = .scaleAspectFill
-            imageView.kf.setImage(
-                with: viewModel.itemAtIndex(i).ADImageURL
-            ) { [weak self] result in
-                switch result {
-                case .success(_):
-                    self?.viewModel?.imageLoadEnd.value = true
-                case .failure(_):
-                    break
-                }
-            }
+            imageView.kf.setImage(with: viewModel.itemAtIndex(i).ADImageURL)
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 10
             scrollView.addSubview(imageView)

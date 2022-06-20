@@ -61,16 +61,7 @@ class FirstADCell: UICollectionViewCell {
                 width: self.bounds.width,
                 height: self.bounds.height
             )
-            imageView.kf.setImage(
-                with: viewModel.itemAtIndex(i).ADImageURL
-            ) { [weak self] result in
-                switch result {
-                case .success(_):
-                    self!.viewModel?.imageLoadEnd.value = true
-                case .failure(_):
-                    break
-                }
-            }
+            imageView.kf.setImage(with: viewModel.itemAtIndex(i).ADImageURL)
             scrollView.addSubview(imageView)
             scrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
         }

@@ -123,7 +123,6 @@ class StoryUnitTest: XCTestCase {
         let sut = StoryListViewModel()
         let models = [StoryModel(cafeName: "", uid: "", userImage: "", userName: "", time: Timestamp(date: Date()), text: "", storyImage: "", imageData: Data(), storyCount: 0)]
         var mockService = MockStoryService()
-        mockService.data = Data()
         mockService.fetchResult = .success(models)
         sut.storyService = mockService
         //when

@@ -235,11 +235,8 @@ class ListCollectionViewController: UICollectionViewController {
         return header
     }
     func setBinding() {
-        cafeViewModel.imageFetchCount.bind { [weak self] count in
-            if count == self!.cafeViewModel.totalCount {
-                self!.cafeViewModel.imageFetchEnd.value = true
-                self!.collectionView.reloadData()
-            }
+        cafeViewModel.cafeFetchEnd.bind { [weak self] _ in
+            self?.collectionView.reloadData()
         }
     }
     
@@ -397,7 +394,7 @@ class ListCollectionViewController: UICollectionViewController {
             delegate?.cellTapped(controller: vc)
         case 4:
             let vc = StoreDetailViewController(
-                viewModel: cafeViewModel.orderNearStore(coodinate: CLLocation.coordinate())[indexPath.row]
+                viewModel: cafeViewModel.orderNewStore(coodinate: CLLocation.coordinate())[indexPath.row]
             )
             delegate?.cellTapped(controller: vc)
         default:

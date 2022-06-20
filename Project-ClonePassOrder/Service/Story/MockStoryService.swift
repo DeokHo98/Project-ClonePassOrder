@@ -9,7 +9,6 @@ import Foundation
 
 struct MockStoryService: StoryServiceProtocol {
     
-    var data: Data!
     var uploadResult: Result<Void,StoryServiceError>!
     var fetchResult: Result<[StoryModel],StoryServiceError>!
     
@@ -22,7 +21,7 @@ struct MockStoryService: StoryServiceProtocol {
     }
     
     func imageFetch(urlString: String, completion: @escaping (Data) -> Void) {
-        completion(data!)
+        completion(Data())
     }
     
     

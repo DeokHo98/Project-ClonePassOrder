@@ -113,6 +113,7 @@ struct SignUpService: SignUpServiceProtocol {
                     return
                 }
                 completion(.success(true))
+                AuthViewModel().logout()
             }
         }
     }

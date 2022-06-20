@@ -37,15 +37,14 @@ class DetailMenuTableViewCell : UITableViewCell {
         itemLabelStackView.spacing = 5
         itemLabelStackView.backgroundColor = .none
         itemLabelStackView.alignment = .fill
-        itemLabelStackView.distribution = .fillEqually
-        itemNameLabel.font = .systemFont(ofSize: 15, weight: .heavy)
+        itemLabelStackView.distribution = .equalSpacing
+        itemNameLabel.font = .systemFont(ofSize: 17, weight: .heavy)
         itemDesLabel.font = .systemFont(ofSize: 13, weight: .medium)
         itemDesLabel.textColor = .darkGray
         [itemNameLabel,itemDesLabel].forEach {$0.numberOfLines = 0 }
         itemPriceLabel.font = .systemFont(ofSize: 14, weight: .bold)
-        itemNameLabel.text = "test"
-        itemDesLabel.text = "설명설명설명설명설명설명설"
-        itemPriceLabel.text = "가격"
+        //itemNameLabel.text = "test"
+        //itemPriceLabel.text = "가격"
     }
     
     private func setLayout() {
@@ -65,5 +64,10 @@ class DetailMenuTableViewCell : UITableViewCell {
             $0.leading.equalToSuperview().offset(12)
             $0.trailing.equalTo(itemImageView.snp.leading)
         }
+    }
+    func setData(_ model : CafeMenuModel) {
+        itemNameLabel.text = model.itemName
+        itemPriceLabel.text = "\(model.price)원"
+        itemDesLabel.text = nil
     }
 }

@@ -14,7 +14,7 @@ struct CategoryModel {
 class CategoryCellData {
     func getCategoryCelDummyData() -> [CategoryModel] {
         return  [
-            CategoryModel(categoryName: "커피"),
+            CategoryModel(categoryName: "커피샘플"),
             CategoryModel(categoryName: "음료"),
             CategoryModel(categoryName: "빽스치노"),
             CategoryModel(categoryName: "주스/에이드"),

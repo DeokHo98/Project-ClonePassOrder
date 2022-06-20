@@ -31,4 +31,12 @@ class DetailMenuTableView : UITableView {
         }
         self.bounces = false
     }
+    func setBind(_ viewModel : DetailMenuTableViewModel) {
+        viewModel.menuArr.bind { [weak self] _ in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.reloadData()
+            }
+        }
+    }
 }

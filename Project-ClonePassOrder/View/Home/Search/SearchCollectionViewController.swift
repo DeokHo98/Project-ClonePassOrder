@@ -134,7 +134,7 @@ class SearchCollectionViewController: UICollectionViewController {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        let viewModel = viewModel.itemAtIndex(indexPath.row)
+        let viewModel = viewModel.searchCafe(text: searchBar.text ?? "")[indexPath.row]
         let vc = StoreDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(vc, animated: true)
     }

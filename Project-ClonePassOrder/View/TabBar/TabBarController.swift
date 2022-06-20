@@ -13,6 +13,7 @@ class TabBarController: UITabBarController {
     
     //MARK: - 프로퍼티
     private var locationManger = CLLocationManager()
+    private var favoriteListViewModel: FavoriteListViewModel = FavoriteListViewModel()
     private lazy var cafeListViewModel: CafeListViewModel = CafeListViewModel()
     private var firstADListViewModel: ADListViewModel = ADListViewModel()
     private var secondADListViewModel: ADListViewModel = ADListViewModel()
@@ -56,7 +57,7 @@ class TabBarController: UITabBarController {
             cafeViewModel: cafe
         )
         let orderHistoryVC = OrderHistoryViewController()
-        let favoriteVC = FavoriteViewController()
+        let favoriteVC = FavoriteViewController(ADViewModel: secondAD, favoriteListViewModel: favoriteListViewModel)
         let qrCameraVC = qrCameraViewController()
         let myPasserVC = MyPasserTableViewController(style: .grouped)
         myPasserVC.viewDidLoad()
@@ -72,7 +73,7 @@ class TabBarController: UITabBarController {
         )
         let favoriteNavi = templatNavigation(
             title: "자주가요",
-            image: UIImage(systemName: "star.fill")!,
+            image: UIImage(systemName: "heart.fill")!,
             rootViewController: favoriteVC
         )
         let qrCameraNavi = templatNavigation(
@@ -132,6 +133,13 @@ class TabBarController: UITabBarController {
         cafeListViewModel.cafeFetchEnd.bind { [weak self] _ in
             self?.serviceCount += 1
         }
+        favoriteListViewModel.favoriteError.bind { [weak self] _ in
+            Toast.message(superView: self!.view, text: "서버연결에 실패했습니다 인터넷 연결을 확인해주세요")
+            self?.favoriteListViewModel.fetchFavoriteID()
+        }
+        favoriteListViewModel.fetchFavoriteIDSuccess.bind { [weak self] ID in
+            self?.favoriteListViewModel.fetchCafeList(ID: ID)
+        }
     }
     func auth() {
         if Auth.auth().currentUser == nil {
@@ -148,6 +156,7 @@ class TabBarController: UITabBarController {
             UserViewModel.shared.userFetch()
             firstADListViewModel.fetchAD(collectionName: "SecondAD")
             secondADListViewModel.fetchAD(collectionName: "FirstAD")
+            favoriteListViewModel.fetchFavoriteID()
         }
     }
     

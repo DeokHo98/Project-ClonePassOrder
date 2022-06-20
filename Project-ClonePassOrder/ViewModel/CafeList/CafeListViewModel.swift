@@ -21,9 +21,6 @@ final class CafeListViewModel {
     var items: [CafeListViewModelItem] = []
     var cafeServiceError: Observer<CafeListServiceError> = Observer(value: .snapShotError)
     var cafeFetchEnd: Observer<Bool> = Observer(value: false)
-    var imageFetchEnd: Observer<Bool> = Observer(value: false)
-    var imageFetchCount: Observer<Int> = Observer(value: 0)
-    var totalCount: Int = 0
 }
 
 extension CafeListViewModel {
@@ -66,18 +63,16 @@ extension CafeListViewModel {
         cafeSerivce.fetchCafe { [weak self] result in
             switch result {
             case .success(let models):
-                self!.totalCount = models.count
-                self!.cafeFetchEnd.value = true
                 let items = models.map {
                     CafeListViewModelItem(model: $0)
                 }
                items.forEach { item in
                    self!.cafeSerivce.imageFetch(model: item.model) { data in
                        item.cellImageData = data
-                       self!.imageFetchCount.value += 1
                    }
                 }
                 self!.items = items
+                self!.cafeFetchEnd.value = true
             case .failure(let error):
                 self?.cafeServiceError.value = error
             }
@@ -164,6 +159,4 @@ final class CafeListViewModelItem: Equatable {
         let distance = userCoordinate.distance(from: cafeCoordinate)
         return Int(distance)
     }
-
-    
 }

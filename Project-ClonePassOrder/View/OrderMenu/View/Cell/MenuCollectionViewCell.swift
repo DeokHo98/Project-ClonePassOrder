@@ -15,6 +15,7 @@ class MenuCollectionViewCell : UICollectionViewCell {
     
     let categoryLabel = UILabel()
     
+    let cellViewModel = MenuCollectionCellViewModel()
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -49,6 +50,7 @@ extension MenuCollectionViewCell {
         }
     }
     func setData(_ model : CategoryModel) {
-        categoryLabel.text = model.categoryName
+        let _model = cellViewModel.changeDataFormat(model)
+        categoryLabel.text = _model.categoryName
     }
 }

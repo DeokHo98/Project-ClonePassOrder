@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1557F0E3A4E7CE5FD0217522 /* Pods_UnitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96A2F4D938A5485CA964749 /* Pods_UnitTest.framework */; };
 		3D2ED9B828354579000B0501 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2ED9B628354579000B0501 /* Constant.swift */; };
+		3DABBA47285710C70065D1F2 /* OrderMenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DABBA46285710C70065D1F2 /* OrderMenuService.swift */; };
+		3DB41FCC285848CE0085B096 /* MenuCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB41FCB285848CE0085B096 /* MenuCollectionCellViewModel.swift */; };
+		3DB41FCE2858EF930085B096 /* CafeMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB41FCD2858EF930085B096 /* CafeMenuModel.swift */; };
 		4B870C8CF724795D1547B76C /* Pods_Project_ClonePassOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007EB4BE1D657C1590A20F12 /* Pods_Project_ClonePassOrder.framework */; };
 		8956F68D283C6E9200A94EC2 /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F68C283C6E9200A94EC2 /* OrderHistoryTableViewCell.swift */; };
 		8956F697283D762B00A94EC2 /* WriteStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F696283D762B00A94EC2 /* WriteStoryViewController.swift */; };
@@ -33,6 +36,12 @@
 		FE3AB5E42850465500A745E6 /* PasswordSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3AB5E32850465500A745E6 /* PasswordSignUpViewController.swift */; };
 		FE3AB5E62850465F00A745E6 /* ConfirmPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3AB5E52850465F00A745E6 /* ConfirmPassWordViewController.swift */; };
 		FE3AB5E82850467800A745E6 /* PhoneNumberSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3AB5E72850467800A745E6 /* PhoneNumberSignupViewController.swift */; };
+		FE4B37BA2858A57A005DD828 /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4B37B92858A57A005DD828 /* MockFavoriteService.swift */; };
+		FE4B37BC2858A781005DD828 /* FavoriteUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4B37BB2858A781005DD828 /* FavoriteUnitTest.swift */; };
+		FE4B37BD2858A7A2005DD828 /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAEA28587A7500CACBF5 /* FavoriteListViewModel.swift */; };
+		FE4B37BE2858A7A2005DD828 /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAEA28587A7500CACBF5 /* FavoriteListViewModel.swift */; };
+		FE4B37C02858A838005DD828 /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4B37B92858A57A005DD828 /* MockFavoriteService.swift */; };
+		FE4B37C12858A839005DD828 /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4B37B92858A57A005DD828 /* MockFavoriteService.swift */; };
 		FE4BEF002832058800530B08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BEEFF2832058800530B08 /* LoginViewController.swift */; };
 		FE4BEF0228321F9700530B08 /* LoginAndSignUpExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BEF0128321F9700530B08 /* LoginAndSignUpExtension.swift */; };
 		FE5840B328322EC100287753 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5840B228322EC100287753 /* EmailLoginViewController.swift */; };
@@ -58,6 +67,10 @@
 		FE8AAADC2858564800CACBF5 /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAADB2858564800CACBF5 /* OwnerModel.swift */; };
 		FE8AAADE2858566700CACBF5 /* OwnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAADD2858566700CACBF5 /* OwnerViewModel.swift */; };
 		FE8AAAE02858566F00CACBF5 /* OwnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAADF2858566F00CACBF5 /* OwnerService.swift */; };
+		FE8AAAE82858729D00CACBF5 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAE72858729D00CACBF5 /* FavoriteService.swift */; };
+		FE8AAAEB28587A7500CACBF5 /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAEA28587A7500CACBF5 /* FavoriteListViewModel.swift */; };
+		FE8AAAEC2858A39600CACBF5 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAE72858729D00CACBF5 /* FavoriteService.swift */; };
+		FE8AAAED2858A39600CACBF5 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8AAAE72858729D00CACBF5 /* FavoriteService.swift */; };
 		FE8E660A28489C9500F8708D /* ADViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED8A7182847B854002E70A6 /* ADViewModel.swift */; };
 		FE8E660B28489C9500F8708D /* ADViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED8A7182847B854002E70A6 /* ADViewModel.swift */; };
 		FE8E661328490A6A00F8708D /* CafeListUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E661228490A6A00F8708D /* CafeListUnitTest.swift */; };
@@ -216,6 +229,9 @@
 		007EB4BE1D657C1590A20F12 /* Pods_Project_ClonePassOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_ClonePassOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F70F3F07B065D56A210BFAD /* Pods-IntegrationUITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntegrationUITest.release.xcconfig"; path = "Target Support Files/Pods-IntegrationUITest/Pods-IntegrationUITest.release.xcconfig"; sourceTree = "<group>"; };
 		3D2ED9B628354579000B0501 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3DABBA46285710C70065D1F2 /* OrderMenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenuService.swift; sourceTree = "<group>"; };
+		3DB41FCB285848CE0085B096 /* MenuCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionCellViewModel.swift; sourceTree = "<group>"; };
+		3DB41FCD2858EF930085B096 /* CafeMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMenuModel.swift; sourceTree = "<group>"; };
 		3F9585D1E0C44B8B8D912868 /* Pods-UnitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTest.debug.xcconfig"; path = "Target Support Files/Pods-UnitTest/Pods-UnitTest.debug.xcconfig"; sourceTree = "<group>"; };
 		41182F546245F6F7250EAD4D /* Pods_ViewUITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViewUITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A68B7288909C723AAF56091 /* Pods-ViewUITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewUITest.debug.xcconfig"; path = "Target Support Files/Pods-ViewUITest/Pods-ViewUITest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +272,8 @@
 		FE3AB5E32850465500A745E6 /* PasswordSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpViewController.swift; sourceTree = "<group>"; };
 		FE3AB5E52850465F00A745E6 /* ConfirmPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPassWordViewController.swift; sourceTree = "<group>"; };
 		FE3AB5E72850467800A745E6 /* PhoneNumberSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberSignupViewController.swift; sourceTree = "<group>"; };
+		FE4B37B92858A57A005DD828 /* MockFavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteService.swift; sourceTree = "<group>"; };
+		FE4B37BB2858A781005DD828 /* FavoriteUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUnitTest.swift; sourceTree = "<group>"; };
 		FE4BEEFF2832058800530B08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE4BEF0128321F9700530B08 /* LoginAndSignUpExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpExtension.swift; sourceTree = "<group>"; };
 		FE5840B228322EC100287753 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +291,8 @@
 		FE8AAADB2858564800CACBF5 /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
 		FE8AAADD2858566700CACBF5 /* OwnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewModel.swift; sourceTree = "<group>"; };
 		FE8AAADF2858566F00CACBF5 /* OwnerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerService.swift; sourceTree = "<group>"; };
+		FE8AAAE72858729D00CACBF5 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		FE8AAAEA28587A7500CACBF5 /* FavoriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModel.swift; sourceTree = "<group>"; };
 		FE8E661228490A6A00F8708D /* CafeListUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListUnitTest.swift; sourceTree = "<group>"; };
 		FE8E661628490A8900F8708D /* CafeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListViewModel.swift; sourceTree = "<group>"; };
 		FE8E661828490A9000F8708D /* CafeListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListService.swift; sourceTree = "<group>"; };
@@ -404,6 +424,36 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		3DABBA44285710900065D1F2 /* OrderMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3DABBA46285710C70065D1F2 /* OrderMenuService.swift */,
+			);
+			path = OrderMenu;
+			sourceTree = "<group>";
+		};
+		3DB41FCA285848BB0085B096 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3DB41FCB285848CE0085B096 /* MenuCollectionCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3DBA9336285C45F700596BAE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DBA9337285C45FF00596BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C9D5BDBACCE62F352D461422 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +574,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FE4B37BF2858A829005DD828 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				FE4B37BB2858A781005DD828 /* FavoriteUnitTest.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		FE4BEEFE2832055100530B08 /* LoginAndSignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +622,7 @@
 		FE7208D3284482E200C32AA3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FE8AAAE928587A6400CACBF5 /* Favorite */,
 				FEC13C6E2857112500928D48 /* Story */,
 				FE8E660F28490A4A00F8708D /* CafeList */,
 				FED8A70C2847B7F4002E70A6 /* AD */,
@@ -592,6 +651,21 @@
 				FE8AAADF2858566F00CACBF5 /* OwnerService.swift */,
 			);
 			path = Owner;
+		FE8AAAE62858728B00CACBF5 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				FE8AAAE72858729D00CACBF5 /* FavoriteService.swift */,
+				FE4B37B92858A57A005DD828 /* MockFavoriteService.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		FE8AAAE928587A6400CACBF5 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				FE8AAAEA28587A7500CACBF5 /* FavoriteListViewModel.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		FE8E660E28490A4500F8708D /* CafeList */ = {
@@ -743,6 +817,7 @@
 		FECC824A2845BF3B005FCCFA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FE8AAAE62858728B00CACBF5 /* Favorite */,
 				FEC13C6F2857113100928D48 /* Story */,
 				FE8E661028490A4F00F8708D /* CafeList */,
 				FED8A70B2847B7F0002E70A6 /* AD */,
@@ -750,6 +825,7 @@
 				FEBA7E342845EDCB00BCD132 /* SignUp */,
 				FECC824B2845BF49005FCCFA /* Auth */,
 				FEBA7E3C2845F59000BCD132 /* ImageUploader */,
+				3DABBA44285710900065D1F2 /* OrderMenu */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -867,26 +943,12 @@
 		FED480EB2840923800A36638 /* OrderMenuDetail */ = {
 			isa = PBXGroup;
 			children = (
+				3DBA9337285C45FF00596BAE /* Model */,
+				3DBA9336285C45F700596BAE /* ViewModel */,
 				FED480EC2840923800A36638 /* OrderMenuDetailViewController.swift */,
-				FED480ED2840923800A36638 /* ViewModel */,
-				FED480EE2840923800A36638 /* Model */,
 				FED480EF2840923800A36638 /* View */,
 			);
 			path = OrderMenuDetail;
-			sourceTree = "<group>";
-		};
-		FED480ED2840923800A36638 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		FED480EE2840923800A36638 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FED480EF2840923800A36638 /* View */ = {
@@ -1041,6 +1103,7 @@
 		FED4813F2840939F00A36638 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3DB41FCA285848BB0085B096 /* Cell */,
 				FED481402840939F00A36638 /* MenuCollectionViewModel.swift */,
 				FED481412840939F00A36638 /* DetailMenuTableViewModel.swift */,
 			);
@@ -1051,6 +1114,7 @@
 			isa = PBXGroup;
 			children = (
 				FED481432840939F00A36638 /* CategoryModel.swift */,
+				3DB41FCD2858EF930085B096 /* CafeMenuModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1130,6 +1194,7 @@
 		FEFEEF27284509940063D160 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
+				FE4B37BF2858A829005DD828 /* Favorite */,
 				FEC13C79285771B500928D48 /* Story */,
 				FE8E660E28490A4500F8708D /* CafeList */,
 				FED8A70A2847B7EB002E70A6 /* AD */,
@@ -1415,8 +1480,10 @@
 				FE7208CC28447E0000C32AA3 /* Observer.swift in Sources */,
 				FEBA7E402845F5BE00BCD132 /* MockImageUploaderService.swift in Sources */,
 				FED158C0282DF8FC00605A25 /* OrderHistoryViewController.swift in Sources */,
+				FE8AAAE82858729D00CACBF5 /* FavoriteService.swift in Sources */,
 				FE1287E82836002600B7CDC4 /* ThirdListCell.swift in Sources */,
 				FED481362840924F00A36638 /* LeftRightLabel.swift in Sources */,
+				3DABBA47285710C70065D1F2 /* OrderMenuService.swift in Sources */,
 				FEBBEC44283678180027EE4F /* SortCell.swift in Sources */,
 				FEBA7E392845EE2D00BCD132 /* SignUpModel.swift in Sources */,
 				FED481302840924F00A36638 /* ThreeLabelView.swift in Sources */,
@@ -1430,6 +1497,7 @@
 				FED4812B2840924F00A36638 /* LocationView.swift in Sources */,
 				FED845FC28407F510090D09A /* StoreDetailInfoTableViewCell.swift in Sources */,
 				FED481532840939F00A36638 /* MenuCollectionView.swift in Sources */,
+				FE8AAAEB28587A7500CACBF5 /* FavoriteListViewModel.swift in Sources */,
 				FED481232840924F00A36638 /* dismissKeyboard.swift in Sources */,
 				FED845F628407F510090D09A /* StoreDetailViewController.swift in Sources */,
 				FE8AAADC2858564800CACBF5 /* OwnerModel.swift in Sources */,
@@ -1446,6 +1514,7 @@
 				FED480FC2840923800A36638 /* MoneyCircleButton.swift in Sources */,
 				FED4812A2840924F00A36638 /* CardCollectionViewCell.swift in Sources */,
 				FE6D68142838A02500184329 /* MyPasserHeader.swift in Sources */,
+				3DB41FCC285848CE0085B096 /* MenuCollectionCellViewModel.swift in Sources */,
 				FED158CD282DFB2900605A25 /* Extenstion.swift in Sources */,
 				FE6D68122838914C00184329 /* MyPasserCell.swift in Sources */,
 				FE8E661D28490AB000F8708D /* CafeListModel.swift in Sources */,
@@ -1475,6 +1544,7 @@
 				FED480FB2840923800A36638 /* OrangeSelectButton.swift in Sources */,
 				FE1287E62835FFD600B7CDC4 /* SecondListCell.swift in Sources */,
 				FED4812C2840924F00A36638 /* RequirementView.swift in Sources */,
+				3DB41FCE2858EF930085B096 /* CafeMenuModel.swift in Sources */,
 				FEED608528449DE800CD8FC1 /* MockAuthService.swift in Sources */,
 				FE6D680C28378C2100184329 /* CompositionalLayoutExtension.swift in Sources */,
 				FE5840B328322EC100287753 /* EmailLoginViewController.swift in Sources */,
@@ -1518,6 +1588,7 @@
 				FED481332840924F00A36638 /* PayDetailInfoView.swift in Sources */,
 				FED4812D2840924F00A36638 /* TotalOrderView.swift in Sources */,
 				FED481342840924F00A36638 /* PayReceiptView.swift in Sources */,
+				FE4B37BA2858A57A005DD828 /* MockFavoriteService.swift in Sources */,
 				FED481292840924F00A36638 /* PayInfoView.swift in Sources */,
 				8956F68D283C6E9200A94EC2 /* OrderHistoryTableViewCell.swift in Sources */,
 				FE1287F1283623BF00B7CDC4 /* MoreCollectionViewController.swift in Sources */,
@@ -1531,12 +1602,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4B37C02858A838005DD828 /* MockFavoriteService.swift in Sources */,
 				FE8E662028490B2D00F8708D /* CafeListService.swift in Sources */,
 				FEBA7E65284725BD00BCD132 /* MockUserService.swift in Sources */,
 				FEFEEF2F284509AC0063D160 /* AuthViewModel.swift in Sources */,
 				FEBA7E44284648E200BCD132 /* SignUpService.swift in Sources */,
 				FE8E662228490B2F00F8708D /* MockListCafeService.swift in Sources */,
 				FEBA7E41284648DF00BCD132 /* MockSignUpService.swift in Sources */,
+				FE4B37BD2858A7A2005DD828 /* FavoriteListViewModel.swift in Sources */,
 				FEBA7E4A284648E800BCD132 /* MockImageUploaderService.swift in Sources */,
 				FEFEEF32284509B50063D160 /* Observer.swift in Sources */,
 				FEBA7E4D2846490300BCD132 /* SignUpModel.swift in Sources */,
@@ -1546,10 +1619,12 @@
 				FEBA7E53284715F300BCD132 /* UserUnitTest.swift in Sources */,
 				FE8AAACD2857723700CACBF5 /* MockStoryService.swift in Sources */,
 				FEFEEF29284509940063D160 /* AuthUnitTest.swift in Sources */,
+				FE4B37BC2858A781005DD828 /* FavoriteUnitTest.swift in Sources */,
 				FE8E662428490B3100F8708D /* CafeListModel.swift in Sources */,
 				FED8A7142847B844002E70A6 /* ADService.swift in Sources */,
 				FED8A70F2847B809002E70A6 /* ADUnitTest.swift in Sources */,
 				FED8A71C2847B85F002E70A6 /* ADModel.swift in Sources */,
+				FE8AAAEC2858A39600CACBF5 /* FavoriteService.swift in Sources */,
 				FE8AAAC92857722A00CACBF5 /* StoryViewModel.swift in Sources */,
 				FE8AAACF2857724900CACBF5 /* StoryModel.swift in Sources */,
 				FEBA7E5C2847191D00BCD132 /* UserModel.swift in Sources */,
@@ -1574,14 +1649,17 @@
 				FE8E660B28489C9500F8708D /* ADViewModel.swift in Sources */,
 				FEFEEF6328450AD20063D160 /* AuthService.swift in Sources */,
 				FE8E662328490B2F00F8708D /* MockListCafeService.swift in Sources */,
+				FE8AAAED2858A39600CACBF5 /* FavoriteService.swift in Sources */,
 				FE8E662128490B2D00F8708D /* CafeListService.swift in Sources */,
 				FEFEEF6728450ADC0063D160 /* Observer.swift in Sources */,
+				FE4B37C12858A839005DD828 /* MockFavoriteService.swift in Sources */,
 				FED8A71D2847B860002E70A6 /* ADModel.swift in Sources */,
 				FEFEEF6528450AD50063D160 /* MockAuthService.swift in Sources */,
 				FE8E661F28490B2B00F8708D /* CafeListViewModel.swift in Sources */,
 				FEBA7E4F2846490300BCD132 /* SignUpModel.swift in Sources */,
 				FEBA7E43284648E000BCD132 /* MockSignUpService.swift in Sources */,
 				FE8E662528490B3100F8708D /* CafeListModel.swift in Sources */,
+				FE4B37BE2858A7A2005DD828 /* FavoriteListViewModel.swift in Sources */,
 				FEFEEF6128450AD00063D160 /* AuthViewModel.swift in Sources */,
 				FEBA7E4C284648E800BCD132 /* MockImageUploaderService.swift in Sources */,
 				FE8AAAD02857724900CACBF5 /* StoryModel.swift in Sources */,

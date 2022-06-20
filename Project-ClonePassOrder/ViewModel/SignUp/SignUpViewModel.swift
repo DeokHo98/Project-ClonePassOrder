@@ -211,7 +211,6 @@ extension SignUpViewModel {
                 switch result {
                 case .success(let bool):
                     self?.phoneNumberAuthSuccess.value = bool
-                    AuthViewModel().logout()
                 case .failure(let error):
                     self?.signUpError.value = error
                 }

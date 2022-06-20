@@ -17,7 +17,6 @@ final class ADListViewModel {
     
     var adService: ADServiceProtocol
     
-    var imageLoadEnd: Observer<Bool> = Observer(value: false)
     var items: [ADViewModelItem] = []
     var ADfetchEnd: Observer<Bool> = Observer(value: false)
     var ADServiceError: Observer<ADServiceError> = Observer(value: .snapShotError)

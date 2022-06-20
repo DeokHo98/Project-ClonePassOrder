@@ -19,19 +19,6 @@ class HomeViewController: UIViewController {
     var cafeViewModel: CafeListViewModel
     var firstADListViewModel: ADListViewModel
     var secondADListViewModel: ADListViewModel
-    var imageLoadEndCount: Int = 0 {
-        didSet {
-            let totalCount =
-            firstADListViewModel.count()
-            + secondADListViewModel.count()
-            + 1
-            if imageLoadEndCount == totalCount {
-                tabBarController?.tabBar.isHidden = false
-                indicatorView.removeFromSuperview()
-            }
-        }
-    }
-    private let indicatorView: UIImageView = UIImageView().indicatorView()
     private var homeState: HomeState = .listView
     private let searchButton: UIButton = {
         let bt = UIButton(type: .system)
@@ -104,17 +91,11 @@ class HomeViewController: UIViewController {
         setAtrribute()
         setLayout()
         stateButtonTapped()
-        UIImageView.indicatorSetLayout(view: self.view, imageView: indicatorView)
-        setBinding()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if imageLoadEndCount > firstADListViewModel.count()
-            + secondADListViewModel.count()
-            + 1 {
             navigationController?.navigationBar.isHidden = true
             tabBarController?.tabBar.isHidden = false
-        }
     }
    
     
@@ -153,17 +134,7 @@ class HomeViewController: UIViewController {
             make.trailing.equalTo(listButton.snp.trailing)
         }
     }
-    private func setBinding() {
-        firstADListViewModel.imageLoadEnd.bind { [weak self] _ in
-            self!.imageLoadEndCount += 1
-        }
-        secondADListViewModel.imageLoadEnd.bind { [weak self] _ in
-            self!.imageLoadEndCount += 1
-        }
-        cafeViewModel.imageFetchEnd.bind { [weak self] _ in
-            self!.imageLoadEndCount += 1
-        }
-    }
+    
     private func setAtrribute() {
         view.backgroundColor = .systemBackground
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)

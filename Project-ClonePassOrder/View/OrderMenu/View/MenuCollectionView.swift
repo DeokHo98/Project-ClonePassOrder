@@ -34,5 +34,13 @@ extension MenuCollectionView {
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 7
     }
+    func setBind(_ viewModel : MenuCollectionViewModel) {
+        viewModel.categoryArr.bind { [weak self] _ in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.reloadData()
+            }
+        }
+    }
 }
     

@@ -16,6 +16,7 @@ class StoreDetailViewController: UIViewController {
 
     // MARK: - Properties
     
+    var favoriteViewModel: FavoriteListViewModel = FavoriteListViewModel()
     var cafeDetailViewModel: CafeListViewModelItem
     var storyViewModel: StoryListViewModel = StoryListViewModel()
     var currentSelectedView: SelectedView = .infoView
@@ -42,6 +43,16 @@ class StoreDetailViewController: UIViewController {
         button.layer.cornerRadius = 10
         return button
     }()
+    private lazy var favoriteButton: UIBarButtonItem = {
+        let bt = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: self,
+            action: #selector(buttonTapped)
+        )
+        bt.tintColor = .black
+        return bt
+    }()
 
     // MARK: - viewLifeCycle
     
@@ -58,6 +69,10 @@ class StoreDetailViewController: UIViewController {
         storyViewModel.fetchStory(name: cafeDetailViewModel.name)
         setTableView()
         setLayout()
+        favoriteViewModel.existsFavorite(model: cafeDetailViewModel.model)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setNavi()
     }
 
@@ -81,7 +96,6 @@ class StoreDetailViewController: UIViewController {
             make.top.leading.trailing.equalToSuperview()
             make.bottom.equalTo(floatingView.snp.top)
         }
-        
     }
     
     //MARK: - setNavi
@@ -90,6 +104,8 @@ class StoreDetailViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.topItem?.title = ""
         navigationController?.navigationBar.tintColor = .black
+        navigationItem.rightBarButtonItem = favoriteButton
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     // MARK: - setTableView
@@ -125,6 +141,14 @@ class StoreDetailViewController: UIViewController {
             return
         }
     }
+    @objc func buttonTapped() {
+        let bool = favoriteViewModel.favoriteBool.value
+        if bool {
+            favoriteViewModel.deleteFavorite(model: cafeDetailViewModel.model)
+        } else {
+            favoriteViewModel.addFavorite(model: cafeDetailViewModel.model)
+        }
+     }
     
     //MARK: - 바인딩
     func binding() {
@@ -132,7 +156,17 @@ class StoreDetailViewController: UIViewController {
             Toast.message(superView: self!.view, text: error.message)
             self!.storyViewModel.fetchStory(name: self!.cafeDetailViewModel.name)
         }
+        favoriteViewModel.favoriteBool.bind { [self] bool in
+            if bool {
+                favoriteButton.image = UIImage(systemName: "heart.fill")
+                favoriteButton.tintColor = .red
+            } else {
+                favoriteButton.image = UIImage(systemName: "heart")
+                favoriteButton.tintColor = .black
+            }
+        }
     }
+   
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource

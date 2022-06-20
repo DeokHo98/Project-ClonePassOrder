@@ -7,6 +7,7 @@
 
 import Foundation
 import SnapKit
+import Firebase
 
 protocol OrderMenuDelegate {
     func checkDidOrder()
@@ -15,6 +16,7 @@ class OrderMenuViewController : UIViewController {
     let searchBar = OrderMenuSearchBar()
     let categoryCV = MenuCollectionView()
     let categoryCVVM = MenuCollectionViewModel()
+    let categoryCellVM = MenuCollectionCellViewModel()
     let menuTV = DetailMenuTableView()
     let menuTVVM = DetailMenuTableViewModel()
     let btnContainView = OrangeSelectButton()
@@ -27,8 +29,12 @@ class OrderMenuViewController : UIViewController {
         setAttribute()
         setLayout()
         setLeftBarButtonItem()
+        categoryCVVM.fetchMenu()
+        menuTVVM.fetchMenu(categoris: ["7디저트","6블랙펄","5차","4스무디,쉐이크","3주스,에이드","2빽스치노","1음료","0커피"])
         setCollectionView()
         setTabelView()
+        bind(categoryCVVM, menuTVVM)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
@@ -97,6 +103,10 @@ extension OrderMenuViewController {
         menuTV.delegate = self
         menuTV.dataSource = self
     }
+    private func bind(_ viewModel : MenuCollectionViewModel, _ tableviewvm : DetailMenuTableViewModel) {
+        categoryCV.setBind(viewModel)
+        menuTV.setBind(tableviewvm)
+    }
 }
 extension OrderMenuViewController {
     @objc func backButtonTapped(){
@@ -111,6 +121,7 @@ extension OrderMenuViewController {
 }
 extension OrderMenuViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //print("cnt:\(categoryCVVM.numberOfCategoryArr)")
         return categoryCVVM.numberOfCategoryArr
     }
     
@@ -145,10 +156,12 @@ extension OrderMenuViewController : UICollectionViewDelegateFlowLayout {
 }
 extension OrderMenuViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return menuTVVM.numberOfCategoryArrForHeader
+        //return menuTVVM.numberOfCategoryArrForHeader
+        return categoryCVVM.numberOfCategoryArr
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return menuTVVM.getCategoryName(index: section).categoryName
+        //return menuTVVM.getCategoryName(index: section).categoryName
+        return categoryCellVM.changeDataFormat(categoryCVVM.getCategoryName(index: section)).categoryName
     }
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = .systemGray5
@@ -160,15 +173,15 @@ extension OrderMenuViewController : UITableViewDelegate, UITableViewDataSource {
         return ScreenConstant.deviceHeight * 0.05
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        //return menuTVVM.numberOfMenuArr
+        return menuTVVM.getNumberOfMenuArr(index: section)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailMenuTableViewCell.registerID, for: indexPath) as? DetailMenuTableViewCell else {
             return UITableViewCell()
         }
-//        let shoppingItem  = shoppingTVVM.storage.value[indexPath.row]
-//
-//        cell.setData(shoppingItem)
+        let menuItem  = menuTVVM.getMenuName(section: indexPath.section, index: indexPath.row)
+        cell.setData(menuItem)
         cell.selectionStyle = .none
         return cell
     }

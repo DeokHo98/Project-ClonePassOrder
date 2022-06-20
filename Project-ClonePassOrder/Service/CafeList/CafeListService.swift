@@ -21,7 +21,7 @@ protocol CafeListServicePorotocol {
 
 struct CafeListService: CafeListServicePorotocol {
     func fetchCafe(completion: @escaping (Result<[CafeListModel], CafeListServiceError>) -> Void) {
-        Firestore.firestore().collection("cafe").getDocuments { snapShot, error in
+        Firestore.firestore().collection("cafe").addSnapshotListener { snapShot, error in
             if error != nil {
                 completion(.failure(.CafeFetchError))
             } else {

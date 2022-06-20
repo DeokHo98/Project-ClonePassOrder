@@ -24,3 +24,6 @@ struct CafeListModel: Equatable {
     let address: String
 }
 
+extension CafeListModel {
+    static let EMPTY = CafeListModel(name: "", storyCount: 0, favoriteCount: 0, imageURL: "", lat: 0, lon: 0, orderTime: "", newTime: "", info: "", benefit: "", openTime: "", offDay: "", phoneNumber: "", address: "")
+}
