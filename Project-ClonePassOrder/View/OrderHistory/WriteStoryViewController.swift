@@ -28,11 +28,6 @@ final class WriteStoryViewController: UIViewController {
         label.font = .boldSystemFont(ofSize: 25)
         return label
     }()
-    private let storeImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .gray
-        return imageView
-    }()
     private let registePictureTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "사진 등록이 필요해요"
@@ -87,7 +82,7 @@ final class WriteStoryViewController: UIViewController {
         return stackView
     }()
     private lazy var writeStoryInpormationStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [informationLabelStackView, storeImageView])
+        let stackView = UIStackView(arrangedSubviews: [informationLabelStackView])
         stackView.axis = .horizontal
         stackView.alignment = .top
         stackView.distribution = .fill
@@ -132,9 +127,6 @@ final class WriteStoryViewController: UIViewController {
         view.addSubview(floatingView)
         floatingView.addSubview(floatingButton)
         
-        storeImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(80)
-        }
         writeStoryInpormationStackView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.leading.trailing.equalToSuperview().inset(20)

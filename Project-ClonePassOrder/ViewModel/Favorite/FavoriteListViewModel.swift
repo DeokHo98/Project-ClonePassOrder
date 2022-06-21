@@ -43,7 +43,7 @@ final class FavoriteListViewModel {
             switch result {
             case .success(let model):
                 let viewModel = CafeListViewModelItem(model: model)
-                    self!.service.imageFetch(model: model) { data in
+                    self?.service.imageFetch(model: model) { data in
                         viewModel.cellImageData = data
                     }
                 self?.items.append(viewModel)
