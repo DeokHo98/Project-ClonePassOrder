@@ -8,7 +8,15 @@
 import SnapKit
 import UIKit
 
+protocol quantitySelectDelegate: AnyObject {
+    func plus()
+    func minus()
+}
+
 class QuantitySelectView : UIView {
+    
+  weak var delegate: quantitySelectDelegate?
+    
     let minusButton: UIButton = {
         let bt = UIButton()
         bt.tintColor = .black
@@ -61,5 +69,14 @@ class QuantitySelectView : UIView {
             make.trailing.equalToSuperview().inset(3)
             make.height.width.equalTo(minusButton)
         }
+        plusButton.addTarget(self, action: #selector(plusTapped), for: .touchUpInside)
+        minusButton.addTarget(self, action: #selector(minusTapped), for: .touchUpInside)
+    }
+    
+    @objc func plusTapped() {
+        delegate?.plus()
+    }
+    @objc func minusTapped() {
+        delegate?.minus()
     }
 }

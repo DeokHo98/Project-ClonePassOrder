@@ -12,7 +12,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     
     // MARK: - UI Properties
     
-    private let orderHystoryCellView: UIView = {
+     let orderHystoryCellView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.clipsToBounds = true
@@ -20,56 +20,50 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    private let storeNameLabel: UILabel = {
+     let storeNameLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title1)
         label.text = "빽다방 부천점"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let paymentMethodLabel: UILabel = {
+     let paymentDateLabel: UILabel = {
         let label = UILabel()
-        label.text = "카카오페이 결제"
+        label.textColor = .black
+        label.text = "16일 15:59"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let paymentDateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .systemGray3
-        label.text = "| " + "16일 15:59"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    private let orderTypeLabel: UILabel = {
+     let orderTypeLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.textColor = .systemGray3
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let seperatorView: UIView = {
+     let seperatorView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.heightAnchor.constraint(equalToConstant: 1).isActive = true
         view.backgroundColor = .gray
         return view
     }()
-    private let menuLabel: UILabel = {
+     let menuLabel: UILabel = {
         let label = UILabel()
         label.text = "메뉴"
         label.textColor = .orange
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let menuValueLabel: UILabel = {
+     let menuValueLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 15)
-        label.text = "앗!메리카노(Iced)"
+        label.text = ""
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let moreButton: UIButton = {
+     let moreButton: UIButton = {
         let button = UIButton()
         button.setTitle("", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 13)
@@ -77,14 +71,14 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    private let priceLabel: UILabel = {
+     let priceLabel: UILabel = {
         let label = UILabel()
         label.text = "결제 금액"
         label.textColor = .orange
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let priceValueLabel: UILabel = {
+     let priceValueLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 15)
         label.text = "2000원"
@@ -114,7 +108,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         return button
     }()
     private lazy var paymentInfoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [paymentMethodLabel, paymentDateLabel])
+        let stackView = UIStackView(arrangedSubviews: [paymentDateLabel])
         stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.alignment = .fill
@@ -230,7 +224,8 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         }
         menuStackView.snp.makeConstraints { make in
             make.top.equalTo(seperatorView.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().offset(40)
         }
         priceLabel.snp.makeConstraints { make in
             make.width.equalTo(80)

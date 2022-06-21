@@ -17,13 +17,6 @@ class IceSelectCell : UITableViewCell {
     
     static let registerID = "\(IceSelectCell.self)"
     
-    let optionLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "각얼음(추천)"
-        lb.textColor = .lightGray
-        lb.font = .systemFont(ofSize: 12, weight: .medium)
-        return lb
-    }()
     let moneyCircleBtn = MoneyCircleButton()
     var delegate : OptionCellDelegate?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,15 +32,6 @@ class IceSelectCell : UITableViewCell {
         moneyCircleBtn.addTarget(self, action: #selector(moneyCircleBtnTapped(_:)), for: .touchUpInside)
     }
     private func setLayout(){
-        [optionLabel,moneyCircleBtn].forEach {self.addSubview($0)}
-        optionLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(12)
-            make.centerY.equalToSuperview()
-        }
-        moneyCircleBtn.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(12)
-            make.centerY.equalToSuperview()
-        }
     }
     @objc func moneyCircleBtnTapped(_ sender: UIButton) {
         delegate?.optionTapped(sender)

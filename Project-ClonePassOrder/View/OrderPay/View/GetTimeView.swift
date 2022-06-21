@@ -45,7 +45,7 @@ class GetTimeView: UIView {
     let notiLabel: UILabel = {
         let lb = UILabel()
         lb.text = "* 1시간 이상 시간이 걸리신다면 요청사항에 기입해주세요 "
-        lb.textColor = .systemGray3
+        lb.textColor = .systemGray  
         lb.font = .systemFont(ofSize: 13, weight: .regular)
         return lb
     }()

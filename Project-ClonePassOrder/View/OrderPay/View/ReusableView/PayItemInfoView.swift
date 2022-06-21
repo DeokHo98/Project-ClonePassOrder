@@ -8,7 +8,14 @@
 import SnapKit
 import UIKit
 
+protocol payiteminfoDelegate: AnyObject {
+    func plus()
+    func minus()
+}
+
 class PayItemInfoView : UIView {
+    weak var delegate: payiteminfoDelegate?
+    
     let itemNameLabel: UILabel = {
        let lb = UILabel()
         lb.text = "메뉴"
@@ -18,7 +25,6 @@ class PayItemInfoView : UIView {
     }()
     let itemDesLabel: UILabel = {
        let lb = UILabel()
-        lb.text = "설명"
         lb.font = .systemFont(ofSize: 12, weight: .regular)
         lb.textColor = .lightGray
         return lb
@@ -49,7 +55,7 @@ class PayItemInfoView : UIView {
         super.init(frame: frame)
         setAttribute()
         setLayout()
-        
+        quantityView.delegate = self
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -79,4 +85,16 @@ class PayItemInfoView : UIView {
             make.bottom.equalToSuperview().inset(8)
         }
     }
+}
+
+extension PayItemInfoView: quantitySelectDelegate {
+    func plus() {
+        delegate?.plus()
+    }
+    
+    func minus() {
+        delegate?.minus()
+    }
+    
+    
 }

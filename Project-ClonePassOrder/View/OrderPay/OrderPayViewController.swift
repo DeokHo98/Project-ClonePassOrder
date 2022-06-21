@@ -8,21 +8,70 @@
 import Foundation
 import SnapKit
 import UIKit
+import Firebase
+import SVProgressHUD
+import SwiftUI
 
-class OrderPayViewController : UIViewController {
+class OrderPayViewController : UIViewController, payinfoviewDelegate {
+    let orderviewmodel = OrderViewModel()
+    var time = Timestamp(date: Date())
+    var state: Int = 0
+    func plus() {
+        totalPrice += 메뉴개인값[0]
+        count[0] += 1
+        menuPrice[0] += 메뉴개인값[0]
+    }
+    
+    func minus() {
+        if count[0] > 1 {
+            totalPrice -= 메뉴개인값[0]
+            count[0] -= 1
+            menuPrice[0] -= 메뉴개인값[0]
+        }
+    }
+    
+    var menu: [String] = []
+    var menuPrice: [Int] = [] {
+        didSet {
+            var string2 = String(menuPrice[0])
+            if menuPrice[0] >= 10000 {
+                string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 2))
+            } else {
+                string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 1))
+            }
+            payInfoView.payInfoView.priceLabel.text = string2
+        }
+    }
+    var 메뉴개인값: [Int] = []
+    var totalPrice = 0 {
+        didSet {
+            var string2 = String(totalPrice)
+            if totalPrice >= 10000 {
+                string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 2))
+            } else {
+                string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 1))
+            }
+            payBtn.getButton.setTitle("\(string2)원    결제하기", for: .normal)
+            totalOrderView.wonLabel.text = string2 + "원"
+        }
+    }
+    var count: [Int] = [] {
+        didSet {
+            payInfoView.payInfoView.quantityView.quantityLabel.text = "\(count[0])"
+        }
+    }
     let myScrollView = UIScrollView()
     let locationView = LocationView()
     let payInfoView = PayInfoView()
-    let getTimeView = GetTimeView()
+    
     let requirementView = RequirementView()
     let totalOrderView = TotalOrderView()
-    let cardCV = CardView()
     var isFirst : Bool = false
     let cellSize = CGSize(width: ScreenConstant.deviceWidth * 0.45, height: ScreenConstant.deviceWidth * 0.45 * 0.66)
     var previousIndex = 0
     lazy var scrollStackView: UIStackView = {
         let sv = UIStackView()
-        [locationView, payInfoView, getTimeView, requirementView, totalOrderView, cardCV].forEach { sv.addArrangedSubview($0) }
+        [locationView, payInfoView, requirementView, totalOrderView].forEach { sv.addArrangedSubview($0) }
         sv.axis = .vertical
         sv.spacing = 15
         sv.alignment = .fill
@@ -33,6 +82,7 @@ class OrderPayViewController : UIViewController {
     let payBtn = OrangeSelectButton()
     override func viewDidLoad() {
         super.viewDidLoad()
+        payInfoView.delegate = self
         self.dismissKeyboardWhenTappedAround()
         setAttribute()
         setLayout()
@@ -40,13 +90,39 @@ class OrderPayViewController : UIViewController {
         setCollectionView()
         isFirst = true
         payBtn.getButton.addTarget(self, action: #selector(payBtnTapped), for: .touchUpInside)
+        navigationController?.navigationBar.topItem?.title = ""
+        var string = String(totalPrice)
+        if totalPrice >= 10000 {
+            string.insert(",", at: string.index(string.startIndex, offsetBy: 2))
+        } else {
+            string.insert(",", at: string.index(string.startIndex, offsetBy: 1))
+        }
+        totalOrderView.wonLabel.text = string + "원"
+        var string2 = String(menuPrice[0])
+        if menuPrice[0] >= 10000 {
+            string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 2))
+        } else {
+            string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 1))
+        }
+        payInfoView.payInfoView.itemNameLabel.text = menu[0]
+        payInfoView.payInfoView.priceLabel.text = string2
+        payInfoView.payInfoView.quantityView.quantityLabel.text = "\(count[0])"
+        var string3 = String(menuPrice[1])
+        if menuPrice[1] >= 10000 {
+            string3.insert(",", at: string3.index(string3.startIndex, offsetBy: 2))
+        } else {
+            string3.insert(",", at: string3.index(string3.startIndex, offsetBy: 1))
+        }
+        payInfoView.payInfoView2.itemNameLabel.text = menu[1]
+        payInfoView.payInfoView2.priceLabel.text = string3
+        payInfoView.payInfoView2.quantityView.quantityLabel.text = "\(count[1])"
+     
     }
 }
 extension OrderPayViewController {
     private func setAttribute(){
         view.backgroundColor = .white
-        self.title = "빽다방 미사스마트밸리점"
-        payBtn.getButton.setTitle("결제", for: .normal)
+        self.title = "빽다방 동두천지행점"
         requirementView.requirementTF.delegate = self
     }
     private func setLayout(){
@@ -75,11 +151,6 @@ extension OrderPayViewController {
         self.dismiss(animated: true)
     }
     private func setCollectionView(){
-        cardCV.cardCV.delegate = self
-        cardCV.cardCV.dataSource = self
-        let cellWidth = floor(cellSize.width)
-        let cvInset = (view.bounds.width - cellWidth) / 2.0
-        cardCV.cardCV.contentInset = UIEdgeInsets(top: 0, left: cvInset, bottom: 0, right: cvInset)
     }
 }
 extension OrderPayViewController : UITextFieldDelegate {
@@ -114,33 +185,8 @@ extension OrderPayViewController : UICollectionViewDelegateFlowLayout {
 }
 extension OrderPayViewController : UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView == cardCV.cardCV {
-            let cellWidth = cellSize.width + 20
-            var offset = targetContentOffset.pointee
-            let index = (offset.x + scrollView.contentInset.left) / cellWidth
-            let roundedIndex : CGFloat = round(index)
-            offset = CGPoint(x: roundedIndex * cellWidth - scrollView.contentInset.left, y: scrollView.contentInset.top)
-            targetContentOffset.pointee = offset
-        }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == cardCV.cardCV {
-            let cellWidthSpacing = cellSize.width + 20
-            let offsetX = cardCV.cardCV.contentOffset.x
-            let index = (offsetX + cardCV.cardCV.contentInset.left) / cellWidthSpacing
-            let roundedIdx = round(index)
-            let indexPath = IndexPath(item: Int(roundedIdx), section: 0)
-            if let cell = cardCV.cardCV.cellForItem(at: indexPath) {
-                animateZoomforCell(zoomCell: cell, idxrow: indexPath.row)
-            }
-            if Int(roundedIdx) != previousIndex {
-                let preIdx = IndexPath(item: previousIndex, section: 0)
-                if let preCell = cardCV.cardCV.cellForItem(at: preIdx) {
-                    animateZoomforCellremove(removeCell: preCell)
-                }
-                previousIndex = indexPath.item
-            }
-        }
     }
     private func animateZoomforCell(zoomCell: UICollectionViewCell, idxrow : Int) {
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {zoomCell.transform = .identity}, completion: nil)
@@ -152,9 +198,52 @@ extension OrderPayViewController : UIScrollViewDelegate {
 }
 extension OrderPayViewController {
     @objc private func payBtnTapped(){
-        let nextVC = UINavigationController(rootViewController: PayFinishViewController())
-        nextVC.modalTransitionStyle = .coverVertical
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true)
+        let user = Auth.auth().currentUser?.uid
+        let timesttamp = Timestamp(date: Date())
+        Firestore.firestore().collection("cafe").document("빽다방 동두천지행점").collection("order").document(user ?? "").setData([
+            "state": 0,
+            "name" : UserViewModel.shared.userName,
+            "cafeName": "빽다방 동두천지행점",
+            "menu1": "\(menu[0])",
+            "menu2": "\(menu[1])",
+            "menu1count": "\(count[0])",
+            "menu2count": "\(count[1])",
+            "menu1Price": "\(menuPrice[0])",
+            "menu2Price": "\(menuPrice[1])",
+            "request": requirementView.requirementTF.text ?? "",
+            "totalPrice": "\(totalPrice)",
+            "time": timesttamp
+        ])
+        Firestore.firestore().collection("user").document(user ?? "").collection("order").addDocument(data: [
+            "cafeName": "빽다방 동두천지행점",
+            "menu1": "\(menu[0])",
+            "menu2": "\(menu[1])",
+            "menu1count": "\(count[0])",
+            "menu2count": "\(count[1])",
+            "menu1Price": "\(menuPrice[0])",
+            "menu2Price": "\(menuPrice[1])",
+            "request": requirementView.requirementTF.text ?? "",
+            "totalPrice": "\(totalPrice)",
+            "time": timesttamp
+        ])
+        self.time = timesttamp
+        
+        SVProgressHUD.SVshow(view: view, text: "매장에서 확인중이에요!", button: [])
+        self.orderviewmodel.fetch()
+        
+        Firestore.firestore().collection("cafe").document("빽다방 동두천지행점").collection("order").document(Auth.auth().currentUser?.uid ?? "").addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot?.data() else { return }
+            let num = snapshot["state"] as? Int ?? 0
+            if num == 1 {
+                SVProgressHUD.SVoff(view: self.view, button: [])
+                let nextVC = UINavigationController(rootViewController: PayDetailViewController(viewmodel: self.orderviewmodel))
+                        nextVC.modalTransitionStyle = .coverVertical
+                        nextVC.modalPresentationStyle = .fullScreen
+                        self.present(nextVC, animated: true)
+            }
+        }
     }
 }
+
+
+

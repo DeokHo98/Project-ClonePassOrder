@@ -10,7 +10,7 @@ import SnapKit
 import Firebase
 
 protocol OrderMenuDelegate {
-    func checkDidOrder()
+    func checkDidOrder(totalPrice: Int)
 }
 class OrderMenuViewController : UIViewController {
     let searchBar = OrderMenuSearchBar()
@@ -20,12 +20,26 @@ class OrderMenuViewController : UIViewController {
     let menuTV = DetailMenuTableView()
     let menuTVVM = DetailMenuTableViewModel()
     let btnContainView = OrangeSelectButton()
+    var menu: [String] = []
+    var 메뉴개인값: [Int] = []
+    var menuPrice: [Int] = []
+    var totalPrice: Int = 0 {
+        didSet {
+            var string2 = String(totalPrice)
+            if totalPrice >= 10000 {
+                string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 2))
+            } else {
+                string2.insert(",", at: string2.index(string2.startIndex, offsetBy: 1))
+            }
+            btnContainView.getButton.setTitle("\(string2)원    장바구니 보기", for: .normal)
+        }
+    }
+    var count: [Int] = []
     var didOrder : Bool = false
     var delegate : OrderMenuDelegate?
     var cvCellSelected : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setAttribute()
         setLayout()
         setLeftBarButtonItem()
@@ -34,6 +48,8 @@ class OrderMenuViewController : UIViewController {
         setCollectionView()
         setTabelView()
         bind(categoryCVVM, menuTVVM)
+        navigationController?.navigationBar.topItem?.title = ""
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +60,7 @@ class OrderMenuViewController : UIViewController {
             btnContainView.isHidden = false
         } else {
             btnContainView.isHidden = true
+            btnContainView.getButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
             resetTableViewLayout()
         }
     }
@@ -51,7 +68,7 @@ class OrderMenuViewController : UIViewController {
 extension OrderMenuViewController {
     private func setAttribute(){
         view.backgroundColor = .white
-        self.title = "빽다방 미사스마트밸리점"
+        self.title = "빽다방 동두천지행점"
         btnContainView.isHidden = true
         btnContainView.getButton.setTitle("장바구니 보기", for: .normal)
         btnContainView.getButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
@@ -113,7 +130,13 @@ extension OrderMenuViewController {
         self.dismiss(animated: true)
     }
     @objc func payTapped() {
-        let nextVC = UINavigationController(rootViewController:  OrderPayViewController())
+        let vc = OrderPayViewController()
+        vc.menuPrice = menuPrice
+        vc.menu = menu
+        vc.totalPrice = totalPrice
+        vc.count = count
+        vc.메뉴개인값 = 메뉴개인값
+        let nextVC = UINavigationController(rootViewController: vc)
         nextVC.modalTransitionStyle = .coverVertical
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC,animated: true)
@@ -188,6 +211,10 @@ extension OrderMenuViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = OrderMenuDetailViewController()
         nextVC.preVC = self
+        nextVC.image = menuTVVM.allMenuArr.value[indexPath.section][indexPath.row].imageURL
+        nextVC.price = menuTVVM.allMenuArr.value[indexPath.section][indexPath.row].price
+        nextVC.name = menuTVVM.allMenuArr.value[indexPath.section][indexPath.row].itemName
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 

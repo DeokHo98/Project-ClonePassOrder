@@ -9,6 +9,10 @@ import Foundation
 import SnapKit
 
 class OrderMenuDetailViewController : UIViewController {
+    
+    var image: String = ""
+    var name: String = ""
+    var price: String = ""
     let detailTV = OrderMenuDetailTableView()
     let btnContainView = OrangeSelectButton()
     var quantityCnt : Int = 1
@@ -20,14 +24,15 @@ class OrderMenuDetailViewController : UIViewController {
         setAttribute()
         setLayout()
         setTableView()
+
     }
 }
 extension OrderMenuDetailViewController {
     private func setAttribute(){
         preVC?.delegate = self
         view.backgroundColor = .white
-        self.title = "빽다방 미사스마트밸리점"
-        btnContainView.layer.opacity = 0.5
+        self.title = "빽다방 동두천지행점"
+    
         btnContainView.getButton.addTarget(self, action: #selector(getBtnTapped), for: .touchUpInside)
     }
     private func setLayout(){
@@ -48,7 +53,7 @@ extension OrderMenuDetailViewController {
     }
     private func checkCnttoOpactity() {
         if !ableToOrder{
-            btnContainView.layer.opacity = 0.5
+            btnContainView.layer.opacity = 1
         } else {
             btnContainView.layer.opacity = 1
         }
@@ -58,21 +63,6 @@ extension OrderMenuDetailViewController {
 extension OrderMenuDetailViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
-    }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 2 {
-            return "얼음선택(필수)"
-        } else {
-            return " "
-        }
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 2 ? 32 : CGFloat.leastNonzeroMagnitude
-    }
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.textColor = .black
-        header.textLabel?.font = .systemFont(ofSize: 18, weight: .heavy)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2 {
@@ -84,11 +74,15 @@ extension OrderMenuDetailViewController : UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if indexPath.section == 0 {
-            guard let cell1 = tableView.dequeueReusableCell(withIdentifier: OrderMenuDetailInfoCell.registerID, for: indexPath) as? OrderMenuDetailInfoCell else { return UITableViewCell() }
-            cell = cell1
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: OrderMenuDetailInfoCell.registerID, for: indexPath) as! OrderMenuDetailInfoCell
+            cell1.itemNameLabel.text = name
+            cell1.itemPriceLabel.text = "\(price)원"
+            cell1.itemImageView.kf.setImage(with: URL(string: image))
+            return cell1
         } else if indexPath.section == 1 {
             guard let cell2 = tableView.dequeueReusableCell(withIdentifier: QuantitySelectCell.registerID, for: indexPath) as? QuantitySelectCell else { return UITableViewCell() }
             cell2.delegate = self
+
             cell = cell2
         } else if indexPath.section == 2 {
             guard let cell3 = tableView.dequeueReusableCell(withIdentifier: IceSelectCell.registerID, for: indexPath) as? IceSelectCell else { return UITableViewCell() }
@@ -130,14 +124,24 @@ extension OrderMenuDetailViewController: OptionCellDelegate {
 }
 extension OrderMenuDetailViewController {
     @objc func getBtnTapped(){
-        checkDidOrder()
+        let string = price.components(separatedBy: [","]).joined()
+        let int = Int(string)!
+        checkDidOrder(totalPrice: int * quantityCnt)
     }
 }
 extension OrderMenuDetailViewController : OrderMenuDelegate{
-    func checkDidOrder() {
+    func checkDidOrder(totalPrice: Int) {
+        preVC?.menu.append(name)
+        preVC?.menuPrice.append(totalPrice)
+        preVC?.totalPrice += totalPrice
+        preVC?.count.append(quantityCnt)
+        let string = price.components(separatedBy: [","]).joined()
+        let int = Int(string)!
+        preVC?.메뉴개인값.append(int)
         preVC?.didOrder = true
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
+    
     
     
 }

@@ -14,6 +14,7 @@ class TabBarController: UITabBarController {
     //MARK: - 프로퍼티
     private var locationManger = CLLocationManager()
     private var favoriteListViewModel: FavoriteListViewModel = FavoriteListViewModel()
+    private var orderViewModel: OrderViewModel = OrderViewModel()
     private lazy var cafeListViewModel: CafeListViewModel = CafeListViewModel()
     private var firstADListViewModel: ADListViewModel = ADListViewModel()
     private var secondADListViewModel: ADListViewModel = ADListViewModel()
@@ -24,7 +25,7 @@ class TabBarController: UITabBarController {
                 setNavigation(
                     firstAD: self.firstADListViewModel,
                     secondAD: self.secondADListViewModel,
-                    cafe: self.cafeListViewModel
+                    cafe: self.cafeListViewModel, order: self.orderViewModel
                 )
                 setAttribute()
                 indicatorView.removeFromSuperview()
@@ -50,13 +51,13 @@ class TabBarController: UITabBarController {
     private func setImageView() {
         UIImageView.indicatorSetLayout(view: self.view, imageView: indicatorView)
     }
-    private func setNavigation(firstAD: ADListViewModel,secondAD: ADListViewModel, cafe: CafeListViewModel) {
+    private func setNavigation(firstAD: ADListViewModel,secondAD: ADListViewModel, cafe: CafeListViewModel, order: OrderViewModel) {
         let homeVC = HomeViewController(
             firstADViewModel: firstAD,
             secondADViewModel: secondAD,
             cafeViewModel: cafe
         )
-        let orderHistoryVC = OrderHistoryViewController()
+        let orderHistoryVC = OrderHistoryViewController(viewModel: order)
         let favoriteVC = FavoriteViewController(ADViewModel: secondAD, favoriteListViewModel: favoriteListViewModel)
         let qrCameraVC = qrCameraViewController()
         let myPasserVC = MyPasserTableViewController(style: .grouped)
@@ -157,6 +158,7 @@ class TabBarController: UITabBarController {
             firstADListViewModel.fetchAD(collectionName: "SecondAD")
             secondADListViewModel.fetchAD(collectionName: "FirstAD")
             favoriteListViewModel.fetchFavoriteID()
+            orderViewModel.fetch()
         }
     }
     

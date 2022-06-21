@@ -9,8 +9,6 @@ import SnapKit
 import UIKit
 
 class LeftRightLabel: UIView {
-    var titleStr : String?
-    var contentStr : String?
     let titleLabel: UILabel = {
         let lb = UILabel()
         lb.textColor = .lightGray
@@ -24,8 +22,6 @@ class LeftRightLabel: UIView {
         return lb
     }()
     init(s: String, c: String) {
-        self.titleStr = s
-        self.contentStr = c
         super.init(frame:  CGRect(x: 0, y: 0, width: 0, height: 0))
         setAttribute()
         setLayout()
@@ -35,8 +31,6 @@ class LeftRightLabel: UIView {
     }
     private func setAttribute(){
         self.backgroundColor = .white
-        titleLabel.text = titleStr
-        contentLabel.text = contentStr
     }
     private func setLayout(){
         [titleLabel,contentLabel].forEach {self.addSubview($0)}

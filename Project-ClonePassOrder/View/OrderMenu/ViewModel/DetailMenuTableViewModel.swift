@@ -58,7 +58,16 @@ class DetailMenuTableViewModel {
                     self?.menuArr.value = models
                     self?.allMenuArr.value.insert(models, at: idx)
                     idx += 1
-                    print("allmenu:\(self?.allMenuArr.value)")
+                    if self!.allMenuArr.value.count == categoris.count + 1 {
+                        print("디버그 \(self!.allMenuArr.value[0][0].itemName)")
+                        print("디버그 \(self!.allMenuArr.value[1][0].itemName)")
+                        print("디버그 \(self!.allMenuArr.value[2][0].itemName)")
+                        print("디버그 \(self!.allMenuArr.value[3][0].itemName)")
+                        print("디버그 \(self!.allMenuArr.value[4][0].itemName)")
+                        print("디버그 \(self!.allMenuArr.value[5][0].itemName)")
+                        print("디버그 \(self!.allMenuArr.value[6][0].itemName)")
+                        print("디버그 \(self!.allMenuArr.value[7][0].itemName)")
+                    }
                 case .failure(let error):
                     self?.menuServiceError.value = error
                 }

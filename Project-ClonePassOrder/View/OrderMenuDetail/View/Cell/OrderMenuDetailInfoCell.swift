@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 import SnapKit
 
+
+
 class OrderMenuDetailInfoCell : UITableViewCell {
     
     static let registerID = "\(OrderMenuDetailInfoCell.self)"
     
+
     let itemImageView = UIImageView()
     let itemLabelStackView = UIStackView()
     let itemNameLabel = UILabel()
@@ -28,21 +31,18 @@ class OrderMenuDetailInfoCell : UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     private func setAttribute() {
-        itemImageView.contentMode = .scaleToFill
-        itemImageView.backgroundColor = .systemGray5
+        itemImageView.contentMode = .scaleAspectFit
+        itemImageView.backgroundColor = .white
         itemLabelStackView.axis = .vertical
         itemLabelStackView.spacing = 5
         itemLabelStackView.backgroundColor = .none
         itemLabelStackView.alignment = .fill
         itemLabelStackView.distribution = .fillEqually
-        itemNameLabel.font = .systemFont(ofSize: 15, weight: .heavy)
-        itemDesLabel.font = .systemFont(ofSize: 13, weight: .medium)
+        itemNameLabel.font = .systemFont(ofSize: 20, weight: .heavy)
+        itemDesLabel.font = .systemFont(ofSize: 18, weight: .medium)
         itemDesLabel.textColor = .darkGray
         [itemNameLabel,itemDesLabel].forEach {$0.numberOfLines = 0 }
-        itemPriceLabel.font = .systemFont(ofSize: 14, weight: .bold)
-        itemNameLabel.text = "test"
-        itemDesLabel.text = "설명설명설명설명설명설명설"
-        itemPriceLabel.text = "가격"
+        itemPriceLabel.font = .systemFont(ofSize: 18, weight: .bold)
     }
     
     private func setLayout() {

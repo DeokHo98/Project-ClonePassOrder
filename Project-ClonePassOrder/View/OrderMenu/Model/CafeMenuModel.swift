@@ -13,4 +13,5 @@ struct CafeMenuModel {
     let price : String
     let options1 : [String]?
     let options2 : [String]?
+    let id: Int
 }

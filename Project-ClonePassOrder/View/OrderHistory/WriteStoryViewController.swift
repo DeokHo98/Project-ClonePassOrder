@@ -15,7 +15,7 @@ final class WriteStoryViewController: UIViewController {
     
     // MARK: - UI Properties
 
-    private let storeNameLabel: UILabel = {
+     let storeNameLabel: UILabel = {
         let label = UILabel()
         label.text = "오늘도, 카페일리터 동두천점"
         label.numberOfLines = 2
@@ -198,7 +198,7 @@ final class WriteStoryViewController: UIViewController {
     @objc func writeButtonTapped() {
         viewModel.model.cafeName = "빽다방 동두천지행점"
         viewModel.model.text = storyTextView.text
-        viewModel.model.storyCount = 10
+        viewModel.model.storyCount = 0
         SVProgressHUD.SVshow(view: view, text: "스토리를 올리는 중이에요!", button: [floatingButton,registePictureButton])
         viewModel.uploadImage()
     }

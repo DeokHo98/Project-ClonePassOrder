@@ -15,12 +15,11 @@ class PayReceiptView: UIView {
         return v
     }()
     let topicLabel = ThreeLabelView(str1: "메뉴명", str2: "수량", str3: "금액", color: .orange, strSize: 13)
-    let itemlabel = ThreeLabelView(str1: "앗메리카노", str2: "1", str3: "100원", color: .black, strSize: 15)
-    let itemlabe2 = ThreeLabelView(str1: "앗메리카노", str2: "1", str3: "100원", color: .black, strSize: 15)
-    let itemlabe3 = ThreeLabelView(str1: "앗메리카노", str2: "1", str3: "100원", color: .black, strSize: 15)
+    var itemlabel = ThreeLabelView(str1: "앗메리카노", str2: "1", str3: "100원", color: .black, strSize: 15)
+    var itemlabe2 = ThreeLabelView(str1: "앗메리카노", str2: "1", str3: "100원", color: .black, strSize: 15)
     lazy var itemStackView: UIStackView = {
         let sv = UIStackView()
-        [topicLabel,itemlabel,itemlabe2,itemlabe3].forEach {sv.addArrangedSubview($0)}
+        [topicLabel,itemlabel,itemlabe2].forEach {sv.addArrangedSubview($0)}
         sv.axis = .vertical
         sv.spacing = 2
         sv.alignment = .fill
@@ -32,7 +31,7 @@ class PayReceiptView: UIView {
         let lb = UILabel()
         lb.textColor = .systemGray3
         lb.font = .systemFont(ofSize: 13, weight: .regular)
-        lb.text = "10분 뒤에 받으러 갈게요"
+        lb.text = ""
         return lb
     }()
     let lineView2: UIView = {
@@ -40,8 +39,8 @@ class PayReceiptView: UIView {
         v.backgroundColor = .gray
         return v
     }()
-    let totalLabel = LeftRightLabel(s: "합계", c: "100원")
-    let payTotalLabel = LeftRightLabel(s: "결제금액", c: "100원")
+    var totalLabel = LeftRightLabel(s: "합계", c: "100원")
+    var payTotalLabel = LeftRightLabel(s: "결제금액", c: "100원")
     let lineView3: UIView = {
         let v = UIView()
         v.backgroundColor = .gray
@@ -52,6 +51,7 @@ class PayReceiptView: UIView {
         lb.textColor = .black
         lb.font = .systemFont(ofSize: 13, weight: .regular)
         lb.text = "결제 취소 관련 문의는 해당 매장에 연락해 주시기 바랍니다."
+        lb.textAlignment = .center
         return lb
     }()
     override init(frame: CGRect) {

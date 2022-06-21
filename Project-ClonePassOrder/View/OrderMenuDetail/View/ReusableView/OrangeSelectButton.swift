@@ -11,10 +11,10 @@ import UIKit
 class OrangeSelectButton : UIView {
     let getButton: UIButton = {
         let bt = UIButton()
-        bt.setTitle("담기", for: .normal)
+        bt.setTitle("장바구니 담기", for: .normal)
+        bt.titleLabel?.font = .boldSystemFont(ofSize: 18)
         bt.setTitleColor(.white, for: .normal)
         bt.backgroundColor = .systemOrange
-        bt.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         bt.layer.cornerRadius = 8
         return bt
     }()

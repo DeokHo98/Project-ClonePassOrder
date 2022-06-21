@@ -8,7 +8,22 @@
 import SnapKit
 import UIKit
 
-class PayInfoView: UIView {
+protocol payinfoviewDelegate: AnyObject {
+    func plus()
+    func minus()
+}
+
+class PayInfoView: UIView, payiteminfoDelegate {
+    
+    weak var delegate: payinfoviewDelegate?
+    func plus() {
+        delegate?.plus()
+    }
+    
+    func minus() {
+        delegate?.minus()
+    }
+    
     let titleLabel: UILabel = {
         let lb = UILabel()
         lb.text = "주문 상품정보"
@@ -29,8 +44,6 @@ class PayInfoView: UIView {
     }()
     let moreBtn: UIButton = {
         let bt = UIButton()
-        bt.setImage(UIImage(systemName: "plus.app"), for: .normal)
-        bt.setTitle(" 메뉴 더 담기", for: .normal)
         bt.titleLabel?.font = .systemFont(ofSize: 12, weight: .medium)
         bt.setTitleColor(UIColor.black, for: .normal)
         bt.tintColor = .black
@@ -47,6 +60,8 @@ class PayInfoView: UIView {
     }
     private func setAttribute(){
         self.backgroundColor = .white
+        payInfoView.delegate = self
+        payInfoView2.delegate = self
     }
     private func setLayout(){
         [titleLabel,itemStackView,moreBtn].forEach { self.addSubview($0) }

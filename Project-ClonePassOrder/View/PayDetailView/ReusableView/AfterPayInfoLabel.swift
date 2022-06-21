@@ -9,9 +9,6 @@ import SnapKit
 import UIKit
 
 class AfterPayInfoLabel: UIView {
-    var titleStr : String?
-    var subStr1 : String?
-    var subStr2 : String?
     let titleLabel: UILabel = {
         let lb = UILabel()
         lb.textColor = .black
@@ -38,9 +35,6 @@ class AfterPayInfoLabel: UIView {
         return lb
     }()
     init(titleStr : String, subStr1: String, subStr2: String) {
-        self.titleStr = titleStr
-        self.subStr1 = subStr1
-        self.subStr2 = subStr2
         super.init(frame:  CGRect(x: 0, y: 0, width: 0, height: 0))
         setAttribute()
         setLayout()
@@ -50,9 +44,6 @@ class AfterPayInfoLabel: UIView {
     }
     private func setAttribute(){
         self.backgroundColor = .white
-        titleLabel.text = titleStr
-        contentLabel.text = subStr1
-        contentLabel2.text = subStr2
     }
     private func setLayout(){
         [titleLabel, contentLabel, lineLabel, contentLabel2].forEach { self.addSubview($0)}

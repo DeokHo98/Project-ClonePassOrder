@@ -37,7 +37,7 @@ class StoreDetailViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("메뉴 보기", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         button.titleLabel?.textAlignment = .center
         button.backgroundColor = .systemOrange
         button.layer.cornerRadius = 10
@@ -87,15 +87,17 @@ class StoreDetailViewController: UIViewController {
         floatingView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.snp.bottomMargin)
-            make.height.equalTo(100)
+            make.height.equalToSuperview().multipliedBy(0.08)
         }
         floatingButton.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(8)
+            make.trailing.leading.equalToSuperview().inset(8)
         }
         storeDetailTableView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.bottom.equalTo(floatingView.snp.top)
         }
+        floatingButton.addTarget(self, action: #selector(floatingButtonTapped), for: .touchUpInside)
     }
     
     //MARK: - setNavi
@@ -149,6 +151,11 @@ class StoreDetailViewController: UIViewController {
             favoriteViewModel.addFavorite(model: cafeDetailViewModel.model)
         }
      }
+    @objc func floatingButtonTapped() {
+        let vc = UINavigationController(rootViewController: OrderMenuViewController())
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+    }
     
     //MARK: - 바인딩
     func binding() {

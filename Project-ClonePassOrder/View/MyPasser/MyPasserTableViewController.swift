@@ -169,5 +169,11 @@ extension MyPasserTableViewController {
                 authViewModel.logout()
             }
         }
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let vc = OwnerViewController()
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

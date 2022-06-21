@@ -16,7 +16,7 @@ class PayFinishInfoView: UIView {
         lb.font = .systemFont(ofSize: 15, weight: .semibold)
         return lb
     }()
-    let storeName = LeftRightLabel(s: "매장명", c: "빽다방 미사스마트밸리점")
+    let storeName = LeftRightLabel(s: "매장명", c: "빽다방 동두천지행점")
     let orderNum = LeftRightLabel(s: "주문번호", c: "3")
     let menuName = LeftRightLabel(s: "메뉴", c: "앗메리카노")
     let totalPrice = LeftRightLabel(s: "매장명", c: "100원")

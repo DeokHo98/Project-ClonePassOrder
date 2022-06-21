@@ -31,8 +31,8 @@ class DetailMenuTableViewCell : UITableViewCell {
     }
     
     private func setAttribute() {
-        itemImageView.contentMode = .scaleToFill
-        itemImageView.backgroundColor = .gray
+        itemImageView.contentMode = .scaleAspectFit
+        itemImageView.backgroundColor = .white
         itemLabelStackView.axis = .vertical
         itemLabelStackView.spacing = 5
         itemLabelStackView.backgroundColor = .none
@@ -64,10 +64,12 @@ class DetailMenuTableViewCell : UITableViewCell {
             $0.leading.equalToSuperview().offset(12)
             $0.trailing.equalTo(itemImageView.snp.leading)
         }
+    
     }
     func setData(_ model : CafeMenuModel) {
         itemNameLabel.text = model.itemName
         itemPriceLabel.text = "\(model.price)원"
         itemDesLabel.text = nil
+        itemImageView.kf.setImage(with: URL(string: model.imageURL))
     }
 }

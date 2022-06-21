@@ -48,7 +48,8 @@ struct OrderMenuService : OrderMenuServiceProtocol {
                         imageURL: $0.data()["imageURL"] as? String ?? "",
                         price: $0.data()["price"] as? String ?? "",
                         options1: $0.data()["options1"] as? [String] ?? [],
-                        options2: $0.data()["options2"] as? [String] ?? []
+                        options2: $0.data()["options2"] as? [String] ?? [],
+                        id: $0.data()["id"] as? Int ?? 0
                     )
                 }
                 completion(.success(models))

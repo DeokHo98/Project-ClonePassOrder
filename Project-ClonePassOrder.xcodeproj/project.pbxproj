@@ -46,6 +46,7 @@
 		FE4BEF0228321F9700530B08 /* LoginAndSignUpExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BEF0128321F9700530B08 /* LoginAndSignUpExtension.swift */; };
 		FE5840B328322EC100287753 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5840B228322EC100287753 /* EmailLoginViewController.swift */; };
 		FE5840C328334BC300287753 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5840C228334BC300287753 /* AgreementViewController.swift */; };
+		FE6B0D8428618986009DA95F /* orderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6B0D8328618986009DA95F /* orderViewModel.swift */; };
 		FE6D680C28378C2100184329 /* CompositionalLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6D680B28378C2100184329 /* CompositionalLayoutExtension.swift */; };
 		FE6D680E2837986000184329 /* FavoriteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6D680D2837986000184329 /* FavoriteHeader.swift */; };
 		FE6D68122838914C00184329 /* MyPasserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6D68112838914C00184329 /* MyPasserCell.swift */; };
@@ -81,6 +82,10 @@
 		FE8E662328490B2F00F8708D /* MockListCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E661A28490AA700F8708D /* MockListCafeService.swift */; };
 		FE8E662428490B3100F8708D /* CafeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E661C28490AB000F8708D /* CafeListModel.swift */; };
 		FE8E662528490B3100F8708D /* CafeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E661C28490AB000F8708D /* CafeListModel.swift */; };
+		FEAB205E28616C3A00D5B7D5 /* OwnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB205D28616C3A00D5B7D5 /* OwnerTableViewController.swift */; };
+		FEAB206028616C6400D5B7D5 /* OwnerViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB205F28616C6400D5B7D5 /* OwnerViewmodel.swift */; };
+		FEAB206628616CB900D5B7D5 /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB206528616CB900D5B7D5 /* OwnerModel.swift */; };
+		FEAB206A286171C300D5B7D5 /* OwnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAB2069286171C300D5B7D5 /* OwnerService.swift */; };
 		FEBA7E332845CEE600BCD132 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA7E322845CEE600BCD132 /* ProfileImageViewController.swift */; };
 		FEBA7E372845EE0E00BCD132 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA7E362845EE0E00BCD132 /* SignUpService.swift */; };
 		FEBA7E392845EE2D00BCD132 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA7E382845EE2D00BCD132 /* SignUpModel.swift */; };
@@ -273,6 +278,7 @@
 		FE4BEF0128321F9700530B08 /* LoginAndSignUpExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpExtension.swift; sourceTree = "<group>"; };
 		FE5840B228322EC100287753 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		FE5840C228334BC300287753 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		FE6B0D8328618986009DA95F /* orderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderViewModel.swift; sourceTree = "<group>"; };
 		FE6D680B28378C2100184329 /* CompositionalLayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutExtension.swift; sourceTree = "<group>"; };
 		FE6D680D2837986000184329 /* FavoriteHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHeader.swift; sourceTree = "<group>"; };
 		FE6D68112838914C00184329 /* MyPasserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPasserCell.swift; sourceTree = "<group>"; };
@@ -288,6 +294,10 @@
 		FE8E661828490A9000F8708D /* CafeListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListService.swift; sourceTree = "<group>"; };
 		FE8E661A28490AA700F8708D /* MockListCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListCafeService.swift; sourceTree = "<group>"; };
 		FE8E661C28490AB000F8708D /* CafeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeListModel.swift; sourceTree = "<group>"; };
+		FEAB205D28616C3A00D5B7D5 /* OwnerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerTableViewController.swift; sourceTree = "<group>"; };
+		FEAB205F28616C6400D5B7D5 /* OwnerViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewmodel.swift; sourceTree = "<group>"; };
+		FEAB206528616CB900D5B7D5 /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
+		FEAB2069286171C300D5B7D5 /* OwnerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerService.swift; sourceTree = "<group>"; };
 		FEBA7E322845CEE600BCD132 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
 		FEBA7E362845EE0E00BCD132 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		FEBA7E382845EE2D00BCD132 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -591,6 +601,7 @@
 		FE7208D22844826500C32AA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FEAB205C28616C2300D5B7D5 /* Owner */,
 				FE4BEEFE2832055100530B08 /* LoginAndSignUp */,
 				FEDFF5202833850F00E65E45 /* TabBar */,
 				FED158BB282DF84900605A25 /* Home */,
@@ -678,6 +689,17 @@
 				FE8E661C28490AB000F8708D /* CafeListModel.swift */,
 			);
 			path = CafeList;
+			sourceTree = "<group>";
+		};
+		FEAB205C28616C2300D5B7D5 /* Owner */ = {
+			isa = PBXGroup;
+			children = (
+				FEAB205D28616C3A00D5B7D5 /* OwnerTableViewController.swift */,
+				FEAB205F28616C6400D5B7D5 /* OwnerViewmodel.swift */,
+				FEAB206528616CB900D5B7D5 /* OwnerModel.swift */,
+				FEAB2069286171C300D5B7D5 /* OwnerService.swift */,
+			);
+			path = Owner;
 			sourceTree = "<group>";
 		};
 		FEBA7E342845EDCB00BCD132 /* SignUp */ = {
@@ -867,6 +889,7 @@
 				FED158BF282DF8FC00605A25 /* OrderHistoryViewController.swift */,
 				8956F68C283C6E9200A94EC2 /* OrderHistoryTableViewCell.swift */,
 				8956F696283D762B00A94EC2 /* WriteStoryViewController.swift */,
+				FE6B0D8328618986009DA95F /* orderViewModel.swift */,
 			);
 			path = OrderHistory;
 			sourceTree = "<group>";
@@ -1454,6 +1477,7 @@
 				FE8E661928490A9000F8708D /* CafeListService.swift in Sources */,
 				FED481522840939F00A36638 /* DetailMenuTableView.swift in Sources */,
 				FEBBEC4D283747C60027EE4F /* FourthListCell.swift in Sources */,
+				FEAB206A286171C300D5B7D5 /* OwnerService.swift in Sources */,
 				FE0F5ACD283524D70008017C /* FirstADCell.swift in Sources */,
 				FEC13C782857156C00928D48 /* StoryViewModel.swift in Sources */,
 				FE7208CC28447E0000C32AA3 /* Observer.swift in Sources */,
@@ -1482,6 +1506,7 @@
 				FE1287EB283614B300B7CDC4 /* ListCellHeader.swift in Sources */,
 				FED845FD28407F510090D09A /* StoryTableViewCell.swift in Sources */,
 				FEC13C76285711EB00928D48 /* MockStoryService.swift in Sources */,
+				FEAB205E28616C3A00D5B7D5 /* OwnerTableViewController.swift in Sources */,
 				FED158BD282DF86700605A25 /* HomeViewController.swift in Sources */,
 				FED158C7282DF95F00605A25 /* qrCameraViewController.swift in Sources */,
 				FE3AB5E22850464800A745E6 /* EmailSignupViewController.swift in Sources */,
@@ -1494,6 +1519,7 @@
 				FE6D68142838A02500184329 /* MyPasserHeader.swift in Sources */,
 				3DB41FCC285848CE0085B096 /* MenuCollectionCellViewModel.swift in Sources */,
 				FED158CD282DFB2900605A25 /* Extenstion.swift in Sources */,
+				FE6B0D8428618986009DA95F /* orderViewModel.swift in Sources */,
 				FE6D68122838914C00184329 /* MyPasserCell.swift in Sources */,
 				FE8E661D28490AB000F8708D /* CafeListModel.swift in Sources */,
 				FED4814C2840939F00A36638 /* MenuCollectionViewModel.swift in Sources */,
@@ -1567,8 +1593,10 @@
 				8956F68D283C6E9200A94EC2 /* OrderHistoryTableViewCell.swift in Sources */,
 				FE1287F1283623BF00B7CDC4 /* MoreCollectionViewController.swift in Sources */,
 				FED4814F2840939F00A36638 /* OrderMenuSearchBar.swift in Sources */,
+				FEAB206628616CB900D5B7D5 /* OwnerModel.swift in Sources */,
 				FEBA7E6028471FDB00BCD132 /* UserService.swift in Sources */,
 				FEFEEF6C28451B790063D160 /* SVProgressHUD.swift in Sources */,
+				FEAB206028616C6400D5B7D5 /* OwnerViewmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
