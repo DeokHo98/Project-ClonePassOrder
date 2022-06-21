@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import NMapsMap
+
 
 class StoreDetailInfoTableViewCell: UITableViewCell {
 
@@ -145,11 +147,7 @@ class StoreDetailInfoTableViewCell: UITableViewCell {
         view.backgroundColor = .systemGray6
         return view
     }()
-    private let storeMapView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
-        return view
-    }()
+    private let storeMapView = NMFMapView()
 
     // MARK: - Initializer
 
@@ -215,5 +213,15 @@ class StoreDetailInfoTableViewCell: UITableViewCell {
         holidayValueLabel.text = viewModel.offDay
         telNumberValueLabel.text = viewModel.phoneNumber
         addressValueLabel.text = viewModel.address
+        let info = NMFInfoWindow()
+        let datasource = NMFInfoWindowDefaultTextSource.data()
+        datasource.title = viewModel.name
+        info.offsetX = 0
+        info.offsetY = 0
+        info.dataSource = datasource
+        info.position = NMGLatLng(lat: viewModel.lat, lng: viewModel.lon)
+        info.open(with: storeMapView)
+        let update = NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: viewModel.lat, lng: viewModel.lon), zoom: 16))
+        storeMapView.moveCamera(update)
     }
 }

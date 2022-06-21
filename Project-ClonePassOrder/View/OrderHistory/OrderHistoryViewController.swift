@@ -99,6 +99,9 @@ final class OrderHistoryViewController: UIViewController {
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension OrderHistoryViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.model.value.count
     }

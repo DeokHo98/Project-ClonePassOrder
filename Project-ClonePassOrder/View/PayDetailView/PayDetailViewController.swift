@@ -72,17 +72,24 @@ class PayDetailViewController : UIViewController {
         formateer.dateFormat = "yyyy년 MM월 dd일"
         payDtailInfoView.orderInfo1.titleLabel.text = "주문"
         payDtailInfoView.orderInfo1.contentLabel.text = formateer.string(from: date)
-        receiptView.itemlabel.titleLabel.text = model.menu1
-        receiptView.itemlabel.contentLabel.text = model.menuCount1
-        receiptView.itemlabel.contentLabel2.text = model.menu1price
-        receiptView.itemlabe2.titleLabel.text = model.menu2
-        receiptView.itemlabe2.contentLabel.text = model.menuCount2
-        receiptView.itemlabe2.contentLabel2.text = model.menu2price
         
+        receiptView.topicLabel.titleLabel.text = "메뉴명"
+        receiptView.topicLabel.contentLabel.text = "수량"
+        receiptView.topicLabel.contentLabel2.text = "가격"
+        receiptView.itemlabel.titleLabel.text = model.menu1
+        receiptView.itemlabel.contentLabel.text = model.menuCount1 + "개"
+        receiptView.itemlabel.contentLabel2.text = model.menu1price + "원"
+        receiptView.itemlabe2.titleLabel.text = model.menu2
+        receiptView.itemlabe2.contentLabel.text = model.menuCount2 + "개"
+        receiptView.itemlabe2.contentLabel2.text = model.menu2price + "원"
+        
+        
+        var totalstring = model.totalprice
+        totalstring.insert(",", at: totalstring.index(totalstring.startIndex, offsetBy: 2))
         receiptView.totalLabel.titleLabel.text = "합계"
-        receiptView.totalLabel.contentLabel.text = model.totalprice
+        receiptView.totalLabel.contentLabel.text = totalstring + "원"
         receiptView.payTotalLabel.titleLabel.text = "결제금액"
-        receiptView.payTotalLabel.contentLabel.text = model.totalprice
+        receiptView.payTotalLabel.contentLabel.text = totalstring + "원"
     }
     
     @objc func tochbutton() {

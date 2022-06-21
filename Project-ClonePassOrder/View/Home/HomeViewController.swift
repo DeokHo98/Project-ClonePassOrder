@@ -7,6 +7,7 @@
 
 import SnapKit
 import UIKit
+import NMapsMap
 
 enum HomeState {
     case listView
@@ -59,11 +60,7 @@ class HomeViewController: UIViewController {
         st.spacing = 60
         return st
     }()
-    private let mapView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue
-        return view
-    }()
+    private let mapView = NMFMapView()
     private lazy var listView: ListCollectionViewController = ListCollectionViewController(
         firstADViewModel: self.firstADListViewModel,
         secondADViewModel: self.secondADListViewModel,

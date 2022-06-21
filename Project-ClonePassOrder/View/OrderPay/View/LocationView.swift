@@ -8,6 +8,7 @@
 import Foundation
 import SnapKit
 import UIKit
+import NMapsMap
 
 class LocationView : UIView {
     let checkView: LeftImgRightLabelView = {
@@ -19,21 +20,17 @@ class LocationView : UIView {
         cv.backgroundColor = .systemGray5
         return cv
     }()
-    let mapView : UIView = {
-        let v = UIView()
-        v.backgroundColor = .systemGray5
-        return v
-    }()
+    let mapView = NMFMapView()
     let storeLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "매장명"
+        lb.text = "빽다방 동두천지행점"
         lb.font = .systemFont(ofSize: 12, weight: .medium)
         lb.textColor = .black
         return lb
     }()
     let locLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "위치위치위치"
+        lb.text = "경기 동두천시 동두천로 129 103호"
         lb.font = .systemFont(ofSize: 11, weight: .regular)
         lb.textColor = .lightGray
         return lb
@@ -60,7 +57,7 @@ class LocationView : UIView {
             make.top.equalTo(checkView.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
             make.leadingMargin.equalTo(10)
-            make.height.equalTo(mapView.snp.width).multipliedBy(0.3)
+            make.height.equalTo(200)
         }
         storeLabel.snp.makeConstraints { make in
             make.top.equalTo(mapView.snp.bottom).offset(5)
@@ -71,5 +68,15 @@ class LocationView : UIView {
             make.leading.equalTo(checkView)
             make.bottom.equalToSuperview().inset(12)
         }
+        let info = NMFInfoWindow()
+        let datasource = NMFInfoWindowDefaultTextSource.data()
+        datasource.title = "빽다방 동두천지행점"
+        info.offsetX = 0
+        info.offsetY = 0
+        info.dataSource = datasource
+        info.position = NMGLatLng(lat: 37.892861, lng: 127.05396)
+        info.open(with: mapView)
+        let update = NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: 37.892861, lng: 127.05396), zoom: 16))
+        mapView.moveCamera(update)
     }
 }

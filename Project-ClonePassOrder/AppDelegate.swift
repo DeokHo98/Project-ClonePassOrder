@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import NMapsMap
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        NMFAuthManager.shared().clientId = "u1zb0ws4az"
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge,.sound,.alert], completionHandler: { (granted,error) in })
         application.registerForRemoteNotifications()
         UINavigationBar.appearance().tintColor = .black

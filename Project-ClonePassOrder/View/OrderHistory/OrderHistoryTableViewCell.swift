@@ -235,8 +235,11 @@ final class OrderHistoryTableViewCell: UITableViewCell {
             make.leading.trailing.equalToSuperview().inset(20)
         }
         reorderStorystackView.snp.makeConstraints { make in
-            make.top.equalTo(priceStackView.snp.bottom).offset(10)
+            make.top.equalTo(priceStackView.snp.bottom).offset(20)
             make.leading.trailing.bottom.equalToSuperview().inset(10)
         }
+        storeNameLabel.font = .boldSystemFont(ofSize: 24)
+        paymentDateLabel.font = .systemFont(ofSize: 14)
+        
     }
 }
